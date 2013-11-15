@@ -1,0 +1,6 @@
+*.sublime-project
+*.sublime-workspace
+.sass-cache
+interface/css/canecaria.css
+build/
+RemoteSystemsTempFiles/

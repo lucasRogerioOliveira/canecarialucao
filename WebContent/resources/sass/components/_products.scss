@@ -1,0 +1,48 @@
+.products {
+  
+}
+
+.product-box {
+  @include box-sizing(border-box);
+  width: 163px;
+  display: inline-block;
+  margin: 6px 6px 26px;
+}
+
+.product {
+  background-color: #fff;
+  @include box-sizing(border-box);
+  height: 216px;
+  padding: 8px;
+  border: 2px solid $border;
+  @include border-radius(3px);
+  @include box-shadow(0 1px 10px rgba(#000, .1));
+}
+
+.product-img {
+  width: 149px;
+  height: 147px;
+  cursor: pointer;
+}
+
+.footer-product {
+  padding-top: 7px;
+  border-top: 4px solid $product-hr;
+  position: relative;
+  top: 7px;
+}
+
+.link-product-detail {
+  color: #B6B6B6;
+  font-family: $Bebas-Neue;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.mugs-name {
+  @extend .ellipsis;
+  color: #97938D;
+  font-family: $Corbel;
+  font-size: 18px;
+  margin-bottom: 14px;
+}

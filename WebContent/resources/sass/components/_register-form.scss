@@ -1,0 +1,61 @@
+.register-form {
+  background-color: #fff;
+  border: 1px solid $border;
+  @include box-sizing(border-box);
+  width: 683px;
+  margin: 12px auto 0;
+  padding: 5px 46px;
+  @include border-radius(3px);
+
+  .centered-buttons {
+    margin: 31px 0 18px;
+    border-top: 1px solid $border;
+    padding-top: 15px;
+  }
+}
+
+.register-group {
+  @include clearfix;
+  line-height: 39px;
+  margin: 10px 0;
+}
+
+.input-register {
+  float: right;
+  @include box-sizing(border-box);
+  width: 418px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 12px;
+  border: 1px solid $border;
+  @include border-radius(3px);
+
+  &.picture {
+    width: 310px;
+    margin-right: 14px;
+  }
+}
+
+.label-register {
+  font-family: $Bebas-Neue;
+  font-size: 23px;
+  color: $gray-dark;
+  width: 135px;
+  text-align: right;
+  display: inline-block;
+}
+
+.register-picture {
+  width: 418px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.register-photo {
+  width: 191px;
+  height: 226px;
+  background-color: $noise-bg;
+  border: 1px solid $border;
+  @include border-radius(3px);
+}

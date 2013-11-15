@@ -4,3 +4,4 @@
 interface/css/canecaria.css
 build/
 RemoteSystemsTempFiles/
+*.class

@@ -1,7 +1,5 @@
 package com.canecaria.dao;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 
 public abstract class GenericDaoImpl<T, Long> /*implements GenericDao<T, Long>*/ {

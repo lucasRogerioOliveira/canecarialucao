@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Sale {
@@ -25,14 +27,17 @@ public class Sale {
 	@ManyToOne
 	private User user;
 	
+	@OneToOne
 	private Payment payment;
 	
 	private StatusPayment status;
 	
 	private Calendar dateSaleFinal;
 	
+	@OneToMany
 	private List<SaleItem> salesItems;
 	
+	@OneToOne
 	private Address address;
 
 	public Long getId() {

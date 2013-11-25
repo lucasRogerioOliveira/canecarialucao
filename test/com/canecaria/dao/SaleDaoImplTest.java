@@ -13,7 +13,6 @@ public class SaleDaoImplTest {
 	public void init() {
 		dao = new SaleDaoImpl();
 	}
-	
 
 	@Test
 	public void devePersistirRegistro() {
@@ -21,4 +20,6 @@ public class SaleDaoImplTest {
 		Sale sale = new Sale();
 		dao.save(sale);
 	}
+	
+	
 }

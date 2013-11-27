@@ -1,11 +1,17 @@
 package com.canecaria.dao;
 
-import com.canecaria.model.Product;
+import java.util.List;
 
 public class ProductDaoImpl extends GenericDaoImpl implements ProductDao  {
 
-	protected ProductDaoImpl() {
-		super(Product.class);
+	@Override
+	public List listAll() {
+		return null;
+	}
+
+	@Override
+	public Object searchById(Long id) {
+		return null;
 	}
 	
 

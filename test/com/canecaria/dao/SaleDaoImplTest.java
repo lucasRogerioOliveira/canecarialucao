@@ -1,11 +1,11 @@
 package com.canecaria.dao;
 
+import java.util.Calendar;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import com.canecaria.model.Address;
 import com.canecaria.model.Sale;
-import com.canecaria.model.User;
 
 public class SaleDaoImplTest {
 	
@@ -28,12 +28,13 @@ public class SaleDaoImplTest {
 		
 		Sale sale = new Sale();
 		sale.setTotal(15.00);
-		dao.save(sale);
+		sale.setDateSale(Calendar.getInstance());
+		dao.salvar(sale);
 		
-		User user = new User();
-		user.setCpf("32287661054");
-		user.setName("Josicleide");
-		userDAO.save(user);
+//		User user = new User();
+//		user.setCpf("32287661054");
+//		user.setName("Josicleide");
+//		userDAO.save(user);
 	}
 	
 	

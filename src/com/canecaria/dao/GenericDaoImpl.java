@@ -2,13 +2,15 @@ package com.canecaria.dao;
 
 import javax.persistence.EntityManager;
 
-public abstract class GenericDaoImpl<T, Long> /*implements GenericDao<T, Long>*/ {
+public class GenericDaoImpl<T, Long> {
 	
 	private EMFactory emFactory = new EMFactory();
 	
 	private EntityManager entityManager;
+	private final Class<T> classe;
 	
-	public GenericDaoImpl() {
+	public GenericDaoImpl(Class<T> classe) {
+		this.classe = classe;
 		if(entityManager == null)
 			entityManager = emFactory.createEntityManager();
 	}

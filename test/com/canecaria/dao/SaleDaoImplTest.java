@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.canecaria.model.Sale;
+import com.canecaria.model.User;
+import com.canecaria.dao.UserDao;
+import com.canecaria.dao.UserDaoImpl;
 
 public class SaleDaoImplTest {
 	
@@ -18,7 +21,13 @@ public class SaleDaoImplTest {
 	public void devePersistirRegistro() {
 		
 		Sale sale = new Sale();
+		sale.setTotal(3000.00);
 		dao.save(sale);
+		
+		User user = new User();
+		user.setName("Willian Lindão");
+		UserDaoImpl userDao = new UserDaoImpl();
+		userDao.save(user);
 	}
 	
 	

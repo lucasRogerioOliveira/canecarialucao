@@ -1,9 +1,8 @@
 package com.canecaria.dao;
-import java.io.Serializable;
 import java.util.List;
 
 
-public interface GenericDao<T, Type extends Serializable> {
+public interface GenericDao<T> {
 	
 	void save(T entity);
 	

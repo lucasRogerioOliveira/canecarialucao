@@ -6,6 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class User {
@@ -18,6 +22,7 @@ public class User {
 	
 	private String phone;
 	
+	@Temporal(TemporalType.DATE)
 	private Calendar birthday;
 
 	private String rg;
@@ -27,8 +32,10 @@ public class User {
 	
 	private String gender;
 	
+	@OneToOne
 	private Address address;
-	
+
+	@OneToOne
 	private Login login;
 
 	public Long getId() {

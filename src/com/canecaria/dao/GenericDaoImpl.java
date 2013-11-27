@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 
 public abstract class GenericDaoImpl<T, Long> /*implements GenericDao<T, Long>*/ {
 	
-	private EntityManagerFactory emFactory;
+	private EMFactory emFactory = new EMFactory();
 	
 	private EntityManager entityManager;
 	

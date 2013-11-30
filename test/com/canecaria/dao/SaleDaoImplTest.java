@@ -1,14 +1,10 @@
 package com.canecaria.dao;
 
-import java.util.Calendar;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import com.canecaria.model.Sale;
 import com.canecaria.model.User;
-import com.canecaria.dao.UserDao;
-import com.canecaria.dao.UserDaoImpl;
 
 public class SaleDaoImplTest {
 	

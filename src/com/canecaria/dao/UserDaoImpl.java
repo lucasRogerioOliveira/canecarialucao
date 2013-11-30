@@ -15,5 +15,9 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
 	public User searchById(Long id) {
 		return null;
 	}
-
+	
+	public User searchByUsername(String username) {
+		// Realizar pesquisa no banco pelo username do usuário (userName -> coluna 4)
+		return new User();
+	}
 }

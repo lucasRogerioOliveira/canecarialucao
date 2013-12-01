@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="canecarialucao">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+<<<<<<< HEAD
+        <property name="java-output-path" value="/canecarialucao/build/classes"/>
+        <property name="context-root" value="canecarialucao"/>
+=======
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
         <property name="context-root" value="canecarialucao"/>
         <property name="java-output-path" value="/canecarialucao/build/classes"/>
+>>>>>>> 95f0ef9075d37dcb7118c1b60f85eb5207c84f5d
     </wb-module>
 </project-modules>

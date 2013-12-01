@@ -73,7 +73,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 5, ../sass/core/_core.scss */
 body {
   font-family: "Lucida Sans";
-  background-image: url('/resources/images/backgrounds/pattern-bg.png?1384528372');
+  background-image: url('/resources/images/backgrounds/pattern-bg.png?1384545072');
 }
 
 /* line 10, ../sass/core/_core.scss */
@@ -264,17 +264,26 @@ a {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 21, ../sass/components/_containers.scss */
+/* line 3, ../sass/helpers/_mixins.scss */
+.main .container:before, .main .container:after {
+  content: ' ';
+  display: table;
+}
+/* line 7, ../sass/helpers/_mixins.scss */
+.main .container:after {
+  clear: both;
+}
+/* line 22, ../sass/components/_containers.scss */
 .main .footer-main {
   color: #979393;
   margin-top: 37px;
 }
-/* line 25, ../sass/components/_containers.scss */
+/* line 26, ../sass/components/_containers.scss */
 .main .footer-main a {
   color: #979393;
 }
 
-/* line 35, ../sass/components/_containers.scss */
+/* line 36, ../sass/components/_containers.scss */
 .aside-login {
   font-family: Bebas Neue;
   -webkit-box-sizing: border-box;
@@ -284,7 +293,7 @@ a {
   line-height: 27px;
 }
 
-/* line 42, ../sass/components/_containers.scss */
+/* line 43, ../sass/components/_containers.scss */
 .aside-login-label {
   color: #6b430b;
   font-size: 19px;
@@ -292,7 +301,7 @@ a {
   margin: 5px 0;
 }
 
-/* line 49, ../sass/components/_containers.scss */
+/* line 50, ../sass/components/_containers.scss */
 .aside-login-link {
   color: #6b430b;
   font-family: Corbel;
@@ -300,7 +309,7 @@ a {
   line-height: 15px;
 }
 
-/* line 56, ../sass/components/_containers.scss */
+/* line 57, ../sass/components/_containers.scss */
 .aside-input {
   line-height: 29px;
   height: 29px;
@@ -314,19 +323,55 @@ a {
   padding: 0 12px;
 }
 
-/* line 65, ../sass/components/_containers.scss */
+/* line 66, ../sass/components/_containers.scss */
 .aside-login-content {
   background-color: #d7d1b8;
   padding: 5px 10px 10px;
   margin-top: 12px;
 }
-/* line 70, ../sass/components/_containers.scss */
+/* line 71, ../sass/components/_containers.scss */
 .aside-login-content .btn {
   font-family: Bebas Neue;
   font-weight: normal;
   font-size: 18px;
   letter-spacing: 1px;
   margin: 17px 0 6px;
+}
+
+/* line 80, ../sass/components/_containers.scss */
+.products-card {
+  color: #fff;
+  font-family: Bebas Neue;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 680px;
+  margin-top: 10px;
+  padding: 9px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 91, ../sass/components/_containers.scss */
+.product-detail {
+  background-color: #fff;
+  font-family: Bebas Neue;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 680px;
+  margin-top: 10px;
+  padding: 9px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 
 /* line 3, ../sass/components/_css-properties.scss */
@@ -839,6 +884,205 @@ a {
   font-family: Corbel;
   font-size: 18px;
   margin-bottom: 14px;
+}
+
+/* line 51, ../sass/components/_products.scss */
+.product-card {
+  margin: 4px 0;
+  display: inline-block;
+}
+/* line 55, ../sass/components/_products.scss */
+.product-card tr .pc-header, .product-card tr .pc-product {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 5px;
+  border: 1px solid #dbdcda;
+}
+/* line 60, ../sass/components/_products.scss */
+.product-card tr .pc-header:first-child, .product-card tr .pc-product:first-child {
+  width: 396px;
+}
+/* line 64, ../sass/components/_products.scss */
+.product-card tr .pc-header:nth-child(2), .product-card tr .pc-product:nth-child(2) {
+  width: 151px;
+  text-align: center;
+}
+/* line 69, ../sass/components/_products.scss */
+.product-card tr .pc-header:last-child, .product-card tr .pc-product:last-child {
+  width: 112px;
+  text-align: center;
+}
+
+/* line 76, ../sass/components/_products.scss */
+.pc-header {
+  background-color: #c1ab89;
+  text-align: left;
+  line-height: 30px;
+}
+
+/* line 82, ../sass/components/_products.scss */
+.pc-product {
+  color: #736D6D;
+  background-color: #fff;
+  line-height: 33px;
+}
+/* line 87, ../sass/components/_products.scss */
+.pc-product .product-img {
+  width: 92px;
+  height: 90px;
+  -webkit-box-shadow: 0 4px white, 0 7px #e9e3e3;
+  -moz-box-shadow: 0 4px white, 0 7px #e9e3e3;
+  box-shadow: 0 4px white, 0 7px #e9e3e3;
+}
+
+/* line 94, ../sass/components/_products.scss */
+.n-of-mugs {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 35px;
+  height: 22px;
+  border: 1px solid #dbdcda;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 103, ../sass/components/_products.scss */
+.pc-total-price {
+  color: #0B0A0A;
+  font-size: 23px;
+  text-align: center;
+  margin: 14px 0;
+}
+
+/* line 110, ../sass/components/_products.scss */
+.products-profile {
+  color: #807F7B;
+  font-size: 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 212px;
+  padding: 9px;
+  margin-top: 10px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 121, ../sass/components/_products.scss */
+.pc-profile-user {
+  margin-bottom: 25px;
+}
+
+/* line 125, ../sass/components/_products.scss */
+.pc-profile-address {
+  margin-bottom: 5px;
+}
+
+/* line 129, ../sass/components/_products.scss */
+.pc-profile {
+  height: 112px;
+  width: 96px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+  border-radius: 9px;
+  -webkit-box-shadow: 2px 2px 4px #c1c1c1;
+  -moz-box-shadow: 2px 2px 4px #c1c1c1;
+  box-shadow: 2px 2px 4px #c1c1c1;
+}
+
+/* line 136, ../sass/components/_products.scss */
+.pc-profile-info {
+  width: 87px;
+  display: inline-block;
+  vertical-align: 56px;
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+/* line 144, ../sass/components/_products.scss */
+.pc-profile-info .pc-profile-login, .pc-address {
+  color: #928860;
+  font-size: 14px;
+  border-bottom: 1px solid #928860;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+/* line 153, ../sass/components/_products.scss */
+.pd-detail {
+  font-family: "Lucida Sans";
+  font-size: 18px;
+  margin-left: 9px;
+  vertical-align: 2px;
+}
+
+/* line 160, ../sass/components/_products.scss */
+.photo-detail {
+  width: 329px;
+  height: 351px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 167, ../sass/components/_products.scss */
+.aside-products-detail {
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 212px;
+  padding: 9px;
+  margin-top: 10px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 177, ../sass/components/_products.scss */
+.detail-picture {
+  width: 192px;
+  height: 204px;
+  text-align: center;
+}
+
+/* line 183, ../sass/components/_products.scss */
+.detail-pictures {
+  border-top: 2px solid #dbdcda;
+}
+/* line 185, ../sass/components/_products.scss */
+.detail-pictures li {
+  display: inline-block;
+  border-right: 1px solid #dbdcda;
+}
+/* line 189, ../sass/components/_products.scss */
+.detail-pictures li:last-child {
+  border-right: 0;
+}
+
+/* line 195, ../sass/components/_products.scss */
+.detail-picture-mini {
+  width: 54px;
+  height: 50px;
+  margin-right: 6px;
 }
 
 /* line 1, ../sass/components/_register-form.scss */

@@ -44,34 +44,61 @@
       
       <h1 class="section-title">cadastrar usuário</h1>
       
-      <form action="" class="register-form">
+      <h:form class="register-form">
       	<div class="register-group">
-          <input type="text" class="input-register" />
-          <label class="label-register">nome de usuário:</label>
+          <h:inputText class="input-register" value="#{registerUserManager.user.login.userName}"/>
+          <label class="label-register">login:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText class="input-register" value="#{registerUserManager.user.login.password}"/>
+          <label class="label-register">senha:</label>
         </div>
 
         <div class="register-group">
-          <input type="text" class="input-register" />
+          <h:inputText class="input-register" value="#{registerUserManager.user.name}" />
           <label class="label-register">nome:</label>
         </div>
-
+        
         <div class="register-group">
-          <input type="text" class="input-register" />
-          <label class="label-register">sobrenome:</label>
+          <h:inputText class="input-register" value="#{registerUserManager.user.birthday}">
+          	<f:convertDateTime pattern="dd/MM/yyyy"/>
+          </h:inputText>
+          <label class="label-register">data de nascimento:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText class="input-register" value="#{registerUserManager.user.gender}" />
+          <label class="label-register">sexo:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText class="input-register" value="#{registerUserManager.user.rg}" />
+          <label class="label-register">RG:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText class="input-register" value="#{registerUserManager.user.cpf}" />
+          <label class="label-register">CPF:</label>
         </div>
 
+		<div class="register-group">
+          <h:inputText class="input-register" value="#{registerUserManager.user.phone}" />
+          <label class="label-register">phone:</label>
+        </div>
+        
         <div class="register-group">
-          <input type="text" class="input-register" />
+          <h:inputText class="input-register" />
           <label class="label-register">rua:</label>
         </div>
 
         <div class="register-group">
-          <input type="text" class="input-register" />
+          <h:inputText class="input-register" value="#{registerUserManager.user.address.number}" />
           <label class="label-register">número:</label>
         </div>
 
         <div class="register-group">
-          <input type="text" class="input-register" />
+          <h:inputText class="input-register" />
           <label class="label-register">bairro:</label>
         </div>
 
@@ -85,11 +112,12 @@
         </div>
 
         <div class="centered-buttons">
-          <input type="submit" value="adicionar" class="btn btn-ok"/>
+          <h:commandButton value="adicionar" class="btn btn-ok" action="#{registerUserManager.addUserAction}"/>
           <button class="btn">Cancelar</button>
         </div>
+        <h:messages></h:messages>
 
-      </form>
+      </h:form>
       
     </div>
     <footer class="footer-main">

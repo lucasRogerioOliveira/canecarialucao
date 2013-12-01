@@ -15,10 +15,8 @@ public class Login {
 	@Id
 	private Long id;
 	
-	@Column(length=5)
 	private String userName;
 	
-	@Column(length=6)
 	private String password;
 	
 	@Enumerated(EnumType.STRING)

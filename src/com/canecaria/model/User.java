@@ -1,12 +1,11 @@
 package com.canecaria.model;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -23,7 +22,7 @@ public class User {
 	private String phone;
 	
 	@Temporal(TemporalType.DATE)
-	private Calendar birthday;
+	private Date birthday;
 
 	private String rg;
 	
@@ -62,11 +61,11 @@ public class User {
 		this.phone = phone;
 	}
 
-	public Calendar getBirthday() {
+	public Date getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Calendar birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
 

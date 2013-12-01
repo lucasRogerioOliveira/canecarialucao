@@ -14,14 +14,17 @@ public abstract class GenericDaoImpl<T/*, Long*/> implements GenericDao<T/*, Lon
 	}
 	
 	@Override
-	public void save(final T entity) {
+	public T save(final T entity) {
 		try {
 			entityManager.getTransaction().begin();
 			entityManager.persist(entity);
 			entityManager.getTransaction().commit();
+			entityManager.close();
 		} catch (Exception e) {
 			
 		}
+		
+		return entity;
 	}
 	
 	@Override

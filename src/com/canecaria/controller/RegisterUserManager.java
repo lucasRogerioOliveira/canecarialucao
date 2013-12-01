@@ -2,6 +2,7 @@ package com.canecaria.controller;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 import com.canecaria.model.Address;
 import com.canecaria.model.Login;
@@ -9,12 +10,14 @@ import com.canecaria.model.User;
 import com.canecaria.service.UserService;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class RegisterUserManager {
 	
 	private User user;
 	
 	private UserService userService;
+	
+	private String msgAnswer;
 	
 	public RegisterUserManager() {
 		userService = new UserService();
@@ -24,7 +27,12 @@ public class RegisterUserManager {
 	}
 	
 	public void addUserAction() {
-		userService.save(user);
+		try {
+			userService.save(user);
+			msgAnswer = "Cadastrado com sucesso";
+		} catch (Exception e) {
+			msgAnswer = e.getMessage();
+		}
 	}
 
 	public User getUser() {

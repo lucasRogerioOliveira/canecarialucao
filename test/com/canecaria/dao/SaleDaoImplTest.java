@@ -23,7 +23,7 @@ public class SaleDaoImplTest {
 	}
 
 	@Test
-	public void devePersistirRegistro() {
+	public void devePersistirRegistro() throws Exception {
 		
 		User user = new User();
 		user.setName("Willian lindo");

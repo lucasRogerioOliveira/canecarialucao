@@ -6,18 +6,19 @@ import org.junit.Test;
 import com.canecaria.model.Login;
 import com.canecaria.model.Sale;
 import com.canecaria.model.User;
+import com.canecaria.service.UserService;
 
 public class SaleDaoImplTest {
 	
 	private SaleDaoImpl dao;
 	
-	private UserDaoImpl userDAO;
+	private UserService userService;
 	private LoginDaoImpl loginDAO;
 	
 	@Before
 	public void init() {
 		dao = new SaleDaoImpl();
-		userDAO = new UserDaoImpl();
+		userService = new UserService();
 		loginDAO = new LoginDaoImpl();
 	}
 
@@ -28,16 +29,12 @@ public class SaleDaoImplTest {
 		user.setName("Willian lindo");
 		
 		user.setLogin(new Login());
-		user.getLogin().setUserName("Willian");
+		user.getLogin().setUserName("teste");
 		user.getLogin().setPassword("pass");
 
 		Login login = (Login) loginDAO.save(user.getLogin());
 		user.getLogin().setId(login.getId());
-		userDAO.save(user);
-		
-//		Sale sale = new Sale();
-//		sale.setTotal(3000.00);
-//		dao.save(sale);
+		userService.save(user);
 		
 	}
 	

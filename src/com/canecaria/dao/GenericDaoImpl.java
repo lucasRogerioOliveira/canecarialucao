@@ -6,7 +6,7 @@ public abstract class GenericDaoImpl<T/*, Long*/> implements GenericDao<T/*, Lon
 	
 	private EMFactory emFactory = new EMFactory();
 	
-	private EntityManager entityManager;
+	public EntityManager entityManager;
 	
 	public GenericDaoImpl() {
 		if(entityManager == null)

@@ -12,20 +12,20 @@ public class AuthentificationService {
 	private UserDaoImpl userDao;
 	
 	public boolean loginService(Login loginVo) {
-		User user = userDao.searchByUsername(loginVo.getUserName());
-		
-		if (user != null) {
-			Login loginDB =  user.getLogin();
-			
-			if (loginVo.getPassword() == loginDB.getPassword()) {
-				FacesContext context = FacesContext.getCurrentInstance();
-				ExternalContext externaContext = context.getExternalContext();
-				HttpSession session = (HttpSession) externaContext.getSession(true);
-				session.setAttribute("userId", user.getId());
-				return true;
-			}
-		}
-		
+//		User user = userDao.searchByUsername(loginVo.getUserName());
+//		
+//		if (user != null) {
+//			Login loginDB =  user.getLogin();
+//			
+//			if (loginVo.getPassword() == loginDB.getPassword()) {
+//				FacesContext context = FacesContext.getCurrentInstance();
+//				ExternalContext externaContext = context.getExternalContext();
+//				HttpSession session = (HttpSession) externaContext.getSession(true);
+//				session.setAttribute("userId", user.getId());
+//				return true;
+//			}
+//		}
+//		
 		return false;
 	}
 	

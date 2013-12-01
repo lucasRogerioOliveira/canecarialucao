@@ -2,6 +2,8 @@ package com.canecaria.dao;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import com.canecaria.model.User;
 
 public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
@@ -16,8 +18,13 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
 		return null;
 	}
 	
-	public User searchByUsername(String username) {
-		// Realizar pesquisa no banco pelo username do usuário (userName -> coluna 4)
-		return new User();
+	@Override
+	public List<User> searchByUsername(String userName) {
+		
+		String jpql = "select u from User u inner join u.login l where l.userName = :login";
+		TypedQuery<User> query = entityManager.createQuery(jpql,User.class);
+		query.setParameter("login", userName);
+		
+		return (List<User>) query.getResultList();
 	}
 }

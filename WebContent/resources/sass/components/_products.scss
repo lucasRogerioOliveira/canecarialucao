@@ -46,3 +46,105 @@
   font-size: 18px;
   margin-bottom: 14px;
 }
+
+//product card
+.product-card {
+  margin: 4px 0;
+  display: inline-block;
+
+  tr .pc-header, tr .pc-product {
+    @include box-sizing(border-box);
+    padding: 0 5px;
+    border: 1px solid $border;
+
+    &:first-child {
+      width: 396px;
+    }
+
+    &:nth-child(2) {
+      width: 151px;
+      text-align: center;
+    }
+
+    &:last-child {
+      width: 112px;
+      text-align: center;
+    }
+  }
+}
+
+.pc-header {
+  background-color: $section-title;
+  text-align: left;
+  line-height: 30px;
+}
+
+.pc-product {
+  color: #736D6D;
+  background-color: #fff;
+  line-height: 33px;
+
+  .product-img {
+    width: 92px;
+    height: 90px;
+    @include box-shadow(0 4px #fff, 0 7px $product-hr);
+  }
+}
+
+.n-of-mugs {
+  @include box-sizing(border-box);
+  width: 35px;
+  height: 22px;
+  border: 1px solid $border;
+  text-align: center;
+  @include border-radius(3px);
+}
+
+.pc-total-price {
+  color: #0B0A0A;
+  font-size: 23px;
+  text-align: center;
+  margin: 14px 0;
+}
+
+.products-profile {
+  color: #807F7B;
+  font-size: 12px;
+  @include box-sizing(border-box);
+  width: 212px;
+  padding: 9px;
+  margin-top: 10px;
+  border: 1px solid $border;
+  @include border-radius(3px);
+}
+
+.pc-profile-user {
+  margin-bottom: 25px;
+}
+
+.pc-profile-address {
+  margin-bottom: 5px;
+}
+
+.pc-profile {
+  height: 112px;
+  width: 96px;
+  @include border-radius(9px);
+  @include box-shadow(2px 2px 4px #c1c1c1);
+}
+
+.pc-profile-info {
+  width: 87px;
+  display: inline-block;
+  vertical-align: 56px;
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.pc-profile-info .pc-profile-login, .pc-address {
+  color: #928860;
+  font-size: 14px;
+  border-bottom: 1px solid #928860;
+  margin-bottom: 5px;
+  display: inline-block;
+}

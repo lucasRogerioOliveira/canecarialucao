@@ -356,6 +356,24 @@ a {
   border-radius: 3px;
 }
 
+/* line 91, ../sass/components/_containers.scss */
+.product-detail {
+  background-color: #fff;
+  font-family: Bebas Neue;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 680px;
+  margin-top: 10px;
+  padding: 9px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
 /* line 3, ../sass/components/_css-properties.scss */
 .position-absolute {
   position: absolute;
@@ -1000,6 +1018,71 @@ a {
   border-bottom: 1px solid #928860;
   margin-bottom: 5px;
   display: inline-block;
+}
+
+/* line 153, ../sass/components/_products.scss */
+.pd-detail {
+  font-family: "Lucida Sans";
+  font-size: 18px;
+  margin-left: 9px;
+  vertical-align: 2px;
+}
+
+/* line 160, ../sass/components/_products.scss */
+.photo-detail {
+  width: 329px;
+  height: 351px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 167, ../sass/components/_products.scss */
+.aside-products-detail {
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 212px;
+  padding: 9px;
+  margin-top: 10px;
+  border: 1px solid #dbdcda;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 177, ../sass/components/_products.scss */
+.detail-picture {
+  width: 192px;
+  height: 204px;
+  text-align: center;
+}
+
+/* line 183, ../sass/components/_products.scss */
+.detail-pictures {
+  border-top: 2px solid #dbdcda;
+}
+/* line 185, ../sass/components/_products.scss */
+.detail-pictures li {
+  display: inline-block;
+  border-right: 1px solid #dbdcda;
+}
+/* line 189, ../sass/components/_products.scss */
+.detail-pictures li:last-child {
+  border-right: 0;
+}
+
+/* line 195, ../sass/components/_products.scss */
+.detail-picture-mini {
+  width: 54px;
+  height: 50px;
+  margin-right: 6px;
 }
 
 /* line 1, ../sass/components/_register-form.scss */

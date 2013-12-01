@@ -87,3 +87,14 @@
   border: 1px solid $border;
   @include border-radius(3px);
 }
+
+.product-detail {
+  background-color: #fff;
+  font-family: $Bebas-Neue;
+  @include box-sizing(border-box);
+  width: 680px;
+  margin-top: 10px;
+  padding: 9px;
+  border: 1px solid $border;
+  @include border-radius(3px);  
+}

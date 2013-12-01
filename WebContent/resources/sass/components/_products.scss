@@ -148,3 +148,52 @@
   margin-bottom: 5px;
   display: inline-block;
 }
+
+//Product detail
+.pd-detail {
+  font-family: "Lucida Sans";
+  font-size: 18px;
+  margin-left: 9px;
+  vertical-align: 2px;
+}
+
+.photo-detail {
+  width: 329px;
+  height: 351px;
+  border: 1px solid $border;
+  @include border-radius(3px);
+}
+
+.aside-products-detail {
+  background-color: #fff;
+  @include box-sizing(border-box);
+  width: 212px;
+  padding: 9px;
+  margin-top: 10px;
+  border: 1px solid $border;
+  @include border-radius(3px);
+}
+
+.detail-picture {
+  width: 192px;
+  height: 204px;
+  text-align: center;
+}
+
+.detail-pictures {
+  border-top: 2px solid $border;
+  li {
+    display: inline-block;
+    border-right: 1px solid $border;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.detail-picture-mini {
+  width: 54px;
+  height: 50px;
+  margin-right: 6px;
+}

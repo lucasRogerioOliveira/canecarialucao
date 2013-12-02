@@ -11,6 +11,6 @@ public interface GenericDao<T> {
 	
 	List<T> listAll();
 
-	T searchById(Long id);
+	T searchById(Class<T> entity, Long id);
 
 }

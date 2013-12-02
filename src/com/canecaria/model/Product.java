@@ -10,6 +10,11 @@ import javax.persistence.OneToOne;
 
 import com.canecaria.type.Theme;
 
+/**
+ * Unity persistence Product.
+ * @author bruna
+ *
+ */
 @Entity
 public class Product {
 	
@@ -87,6 +92,4 @@ public class Product {
 	public void setSpec(Specification spec) {
 		this.spec = spec;
 	}
-	
-
 }

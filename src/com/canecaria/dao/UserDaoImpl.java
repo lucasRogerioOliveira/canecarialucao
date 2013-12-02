@@ -10,14 +10,11 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
 
 	@Override
 	public List<User> listAll() {
-		return null;
+		String jpql = "select u from User u";
+		TypedQuery<User> query = entityManager.createQuery(jpql, User.class);
+		return query.getResultList();
 	}
 
-	@Override
-	public User searchById(Long id) {
-		return null;
-	}
-	
 	@Override
 	public List<User> searchByUsername(String userName) {
 		

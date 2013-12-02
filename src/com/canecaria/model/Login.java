@@ -1,5 +1,6 @@
 package com.canecaria.model;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -24,13 +25,14 @@ public class Login {
 	
 	@Transient
 	private String confirmPassword;
-	
-	@Transient
-	private List<String> messages;
 
 	@Enumerated(EnumType.STRING)
 	private TypePermission permission;
 
+	public Login() {
+
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -69,13 +71,5 @@ public class Login {
 
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
-	}
-
-	public List<String> getMessages() {
-		return messages;
-	}
-
-	public void setMessages(List<String> messages) {
-		this.messages = messages;
 	}
 }

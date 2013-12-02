@@ -32,6 +32,7 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 		entityManager.getTransaction().begin();
 		entityManager.remove(entity);
 		entityManager.getTransaction().commit();
+		entityManager.close();
 	}
 
 	@Override
@@ -39,6 +40,7 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 		entityManager.getTransaction().begin();
 		entityManager.find(entity, id);
 		entityManager.getTransaction().commit();
+		entityManager.close();
 		return null;
 	}
 

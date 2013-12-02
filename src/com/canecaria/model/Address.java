@@ -16,7 +16,11 @@ public class Address {
 	private String number;
 	
 	private String complement;
+	
+	public Address() {
 
+	}
+	
 	public Long getId() {
 		return id;
 	}

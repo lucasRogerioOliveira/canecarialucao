@@ -2,7 +2,7 @@ package com.canecaria.dao;
 
 import javax.persistence.EntityManager;
 
-public abstract class GenericDaoImpl<T/*, Long*/> implements GenericDao<T/*, Long*/> {
+public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 	
 	private EMFactory emFactory = new EMFactory();
 	
@@ -32,12 +32,15 @@ public abstract class GenericDaoImpl<T/*, Long*/> implements GenericDao<T/*, Lon
 		entityManager.getTransaction().begin();
 		entityManager.remove(entity);
 		entityManager.getTransaction().commit();
+		entityManager.close();
 	}
 
+	@Override
 	public T searchById(final Class<T> entity, Long id) {
 		entityManager.getTransaction().begin();
 		entityManager.find(entity, id);
 		entityManager.getTransaction().commit();
+		entityManager.close();
 		return null;
 	}
 

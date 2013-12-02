@@ -9,11 +9,6 @@ public class LoginDaoImpl<T> extends GenericDaoImpl<T> {
 		return null;
 	}
 
-	@Override
-	public T searchById(Long id) {
-		return null;
-	}
-	
 	public List<T> searchByUserName() {
 		String jpql = "select etc";
 		

@@ -1,11 +1,15 @@
 package com.canecaria.model;
 
-import javax.persistence.Column;
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
 import com.canecaria.type.TypePermission;
 
 @Entity
@@ -19,9 +23,16 @@ public class Login {
 	
 	private String password;
 	
+	@Transient
+	private String confirmPassword;
+
 	@Enumerated(EnumType.STRING)
 	private TypePermission permission;
 
+	public Login() {
+
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -54,6 +65,11 @@ public class Login {
 		this.permission = permission;
 	}
 	
-	
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
 
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
 }

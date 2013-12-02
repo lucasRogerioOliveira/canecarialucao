@@ -16,10 +16,4 @@ public class SaleDaoImpl extends GenericDaoImpl<Sale> implements SaleDao {
 		return null;
 	}
 
-	@Override
-	public Sale searchById(Long id) {
-		return null;
-	}
-
-
 }

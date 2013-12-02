@@ -10,19 +10,16 @@ public class UserDaoImpl extends GenericDaoImpl<User> implements UserDao {
 
 	@Override
 	public List<User> listAll() {
-		return null;
+		String jpql = "select u from User u";
+		TypedQuery<User> query = entityManager.createQuery(jpql, User.class);
+		return query.getResultList();
 	}
 
-	@Override
-	public User searchById(Long id) {
-		return null;
-	}
-	
 	@Override
 	public List<User> searchByUsername(String userName) {
 		
 		String jpql = "select u from User u inner join u.login l where l.userName = :login";
-		TypedQuery<User> query = entityManager.createQuery(jpql,User.class);
+		TypedQuery<User> query = entityManager.createQuery(jpql, User.class);
 		query.setParameter("login", userName);
 		
 		return (List<User>) query.getResultList();

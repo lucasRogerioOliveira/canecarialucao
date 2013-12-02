@@ -1,137 +1,153 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="../resources/css/canecaria.css"/>
-  <title>Cadastrar Usuário</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/canecaria.css" />
+<title>Cadastrar Usuário</title>
 </head>
 <body>
-  <header class="header">
-    <div class="header-inner">
-      <div class="header-right">
-        <ul class="social-networks">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+	<header class="header">
+	<div class="header-inner">
+		<div class="header-right">
+			<ul class="social-networks">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 
-        <div class="header-search">
-          <input type="search" placeholder="SEARCH"/>
-        </div>
-      </div>
-      <div class="brand-189px pull-left"></div>
-    </div>
-  </header>
-  <nav class="menu-top-wraper">
-    <p class="login">
-      LOGIN
-    </p>
-    <ul class="menu-top">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Canecaria</a></li>
-      <li><a href="#">Promoção</a></li>
-      <li><a href="#">Conta</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-  <main class="main">
-    <div class="container no-border">
-      
-      <h1 class="section-title">cadastrar usuário</h1>
-      
-      <h:form class="register-form">
-      	<div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.login.userName}"/>
-          <label class="label-register">login:</label>
-        </div>
-        
-        <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.login.password}"/>
-          <label class="label-register">senha:</label>
-        </div>
+			<div class="header-search">
+				<input type="search" placeholder="SEARCH" />
+			</div>
+		</div>
+		<div class="brand-189px pull-left"></div>
+	</div>
+	</header>
 
-        <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.name}" />
-          <label class="label-register">nome:</label>
-        </div>
-        
-        <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.birthday}">
-          	<f:convertDateTime pattern="dd/MM/yyyy"/>
-          </h:inputText>
-          <label class="label-register">data de nascimento:</label>
-        </div>
-        
-        <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.gender}" />
-          <label class="label-register">sexo:</label>
-        </div>
-        
-        <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.rg}" />
-          <label class="label-register">RG:</label>
-        </div>
-        
-        <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.cpf}" />
-          <label class="label-register">CPF:</label>
-        </div>
+	<nav class="menu-top-wraper">
+	<p class="login">LOGIN</p>
+	<ul class="menu-top">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Canecaria</a></li>
+		<li><a href="#">Promoção</a></li>
+		<li><a href="#">Conta</a></li>
+		<li><a href="#">Contato</a></li>
+	</ul>
+	</nav>
 
-		    <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.phone}" />
-          <label class="label-register">phone:</label>
-        </div>
-        
-        <div class="register-group">
-          <h:inputText class="input-register" />
-          <label class="label-register">rua:</label>
-        </div>
+	<main class="main">
+	<div class="container no-border">
 
-        <div class="register-group">
-          <h:inputText class="input-register" value="#{registerUserManager.user.address.number}" />
-          <label class="label-register">número:</label>
-        </div>
+		<h1 class="section-title">cadastrar usuário</h1>
 
-        <div class="register-group">
-          <h:inputText class="input-register" />
-          <label class="label-register">bairro:</label>
-        </div>
+		<div class="register-form">
+			<ul>
+				<ui:repeat value="#{registerUserManager.messages}" var="message">
+    				<li>#{message}</li>
+				</ui:repeat>
+			</ul>
+		</div>
+		
+		<h:form class="register-form">
+			<div class="register-group">
+				<h:inputText class="input-register"
+					value="#{registerUserManager.user.login.userName}" />
+				<label class="label-register">Login:*</label>
+			</div>
 
-        <div class="register-group">
-          <label class="label-register">foto:</label>
-          <div class="register-picture">
-            <img src="" class="register-photo" />
-            <br/>
-            <button class="btn btn-ok">+ enviar <input type="file" /></button>
-          </div>
-        </div>
+			<div class="register-group">
+				<h:inputSecret class="input-register"
+					value="#{registerUserManager.user.login.password}" />
+				<label class="label-register">Senha:*</label>
+			</div>
+			
+			<div class="register-group">
+				<h:inputSecret class="input-register"
+					value="#{registerUserManager.user.login.confirmPassword}" />
+				<label class="label-register">Confirmar senha:*</label>
+			</div>
 
-        <div class="centered-buttons">
-          <h:commandButton value="adicionar" class="btn btn-ok" action="#{registerUserManager.addUserAction}"/>
-          <button class="btn">Cancelar</button>
-        </div>
-        <h:messages></h:messages>
+			<div class="register-group">
+				<h:inputText class="input-register"
+					value="#{registerUserManager.user.name}" />
+				<label class="label-register">Nome:*</label>
+			</div>
 
-      </h:form>
-      
-    </div>
-    <footer class="footer-main">
-      <ul class="footer-menu">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">CANECARIA</a></li>
-        <li><a href="#">PROMOÇÃO</a></li>
-        <li><a href="#">CONTA</a></li>
-        <li><a href="#">CONTATO</a></li>
-      </ul>
-      <p>Copyright ADS Mother Fuckers</p>
-      <p>Bruna Passarodo, Guto Bonitão, Willian Bignouse</p>
-    </footer>
-  </main>
+			<div class="register-group">
+				<h:inputText class="input-register"
+					value="#{registerUserManager.user.birthday}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:inputText>
+				<label class="label-register">Nascimento:*</label>
+			</div>
+
+			<div class="register-group">
+				<h:selectOneMenu class="input-register"
+					value="#{registerUserManager.user.gender}">
+					<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+					<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+				</h:selectOneMenu>
+				<label class="label-register">Sexo:</label>
+			</div>
+
+			<div class="register-group">
+				<h:inputText class="input-register"
+					value="#{registerUserManager.user.rg}" />
+				<label class="label-register">RG:*</label>
+			</div>
+
+			<div class="register-group">
+				<h:inputText class="input-register"
+					value="#{registerUserManager.user.cpf}" />
+				<label class="label-register">CPF:*</label>
+			</div>
+
+			<div class="register-group">
+				<h:inputText class="input-register"
+					value="#{registerUserManager.user.phone}" />
+				<label class="label-register">Telefone:</label>
+			</div>
+
+			<div class="register-group">
+				<h:inputText class="input-register" value="#{registerUserManager.user.address.cep}" />
+				<label class="label-register">CEP:*</label>
+			</div>
+
+			<div class="register-group">
+				<h:inputText class="input-register"
+					value="#{registerUserManager.user.address.number}" />
+				<label class="label-register">Número:*</label>
+			</div>
+
+			<div class="register-group">
+				<h:inputText class="input-register" value="#{registerUserManager.user.address.complement}"/>
+				<label class="label-register">Complemento:*</label>
+			</div>
+
+			<div class="centered-buttons">
+				<h:commandButton value="adicionar" class="btn btn-ok" action="#{registerUserManager.addUserAction}" />
+				<button class="btn">Cancelar</button>
+			</div>
+		</h:form>
+
+	</div>
+	<footer class="footer-main">
+	<ul class="footer-menu">
+		<li><a href="#">HOME</a></li>
+		<li><a href="#">CANECARIA</a></li>
+		<li><a href="#">PROMOÇÃO</a></li>
+		<li><a href="#">CONTA</a></li>
+		<li><a href="#">CONTATO</a></li>
+	</ul>
+	<p>Copyright ADS Mother Fuckers</p>
+	<p>Bruna Passarodo, Guto Travecão, Willian Bignouse</p>
+	</footer>
+	</main>
 
 
 </body>

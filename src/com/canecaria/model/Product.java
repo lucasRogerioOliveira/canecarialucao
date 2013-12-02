@@ -10,12 +10,19 @@ import javax.persistence.OneToOne;
 
 import com.canecaria.type.Theme;
 
+/**
+ * Unity persistence Product.
+ * @author bruna
+ *
+ */
 @Entity
 public class Product {
 	
 	@GeneratedValue
 	@Id
 	private Long id;
+	
+	private String name;
 	
 	private String description;
 	
@@ -87,6 +94,12 @@ public class Product {
 	public void setSpec(Specification spec) {
 		this.spec = spec;
 	}
-	
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }

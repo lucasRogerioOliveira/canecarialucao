@@ -4,41 +4,61 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<ui:composition template="templates/base.xhtml">
+<ui:composition template="/templates/base.xhtml">
 	<ui:define name="content">
     <div class="container no-border">
       
-      <h1 class="section-title">cadastrar caneca</h1>
+      <h1 class="section-title">Cadastrar caneca</h1>
       
       <form action="" class="register-form">
       	<div class="register-group">
-          <input type="text" class="input-register" />
-          <label class="label-register">nome da estampa:</label>
+          <h:inputText value="#{registerProductManager.product.name}" class="input-register"/>
+          <label class="label-register">Nome da estampa:</label>
         </div>
 
         <div class="register-group">
-          <input type="text" class="input-register" />
-          <label class="label-register">tema:</label>
+          <h:inputText value="#{registerProductManager.product.theme}" class="input-register" />
+          <label class="label-register">Tema:</label>
         </div>
 
         <div class="register-group">
-          <input type="text" class="input-register" />
-          <label class="label-register">preço:</label>
+          <h:inputText value="#{registerProductManager.product.costPrice}" class="input-register" />
+          <label class="label-register">Preço de custo:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText value="#{registerProductManager.product.costPrice}" class="input-register" />
+          <label class="label-register">Preço de venda:</label>
         </div>
 
         <div class="register-group">
-          <input type="text" class="input-register" />
-          <label class="label-register">cor:</label>
+          <h:inputText value="#{registerProductManager.product.spec.color}" class="input-register" />
+          <label class="label-register">Cor:</label>
         </div>
 
         <div class="register-group">
-          <input type="text" class="input-register" />
-          <label class="label-register">tamanho:</label>
+          <h:inputText value="#{registerProductManager.product.spec.weight}" class="input-register" />
+          <label class="label-register">Peso:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText value="#{registerProductManager.product.spec.material}" class="input-register" />
+          <label class="label-register">Material:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText value="#{registerProductManager.product.spec.height}" class="input-register" />
+          <label class="label-register">Altura:</label>
+        </div>
+        
+        <div class="register-group">
+          <h:inputText value="#{registerProductManager.product.spec.weight}" class="input-register" />
+          <label class="label-register">Largura:</label>
         </div>
 
         <div class="register-group">
           <button class="btn pull-right">+ adicionar <input type="file" /></button>
-          <input type="text" class="input-register picture" disabled="true" />
+          <h: class="input-register picture" disabled="true" />
           <label class="label-register">estampa:</label>
         </div>
 

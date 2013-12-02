@@ -21,18 +21,26 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 			entityManager.getTransaction().commit();
 			entityManager.close();
 		} catch (Exception e) {
-			
+			e.printStackTrace();
+			return null;
 		}
 		
 		return entity;
 	}
 	
 	@Override
-	public void delete(final T entity) {
-		entityManager.getTransaction().begin();
-		entityManager.remove(entity);
-		entityManager.getTransaction().commit();
-		entityManager.close();
+	public boolean delete(final T entity) {
+		try {
+			entityManager.getTransaction().begin();
+			entityManager.remove(entity);
+			entityManager.getTransaction().commit();
+			entityManager.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		return true;
 	}
 
 	@Override
@@ -43,15 +51,4 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 		entityManager.close();
 		return null;
 	}
-
-	
-	private boolean validationCreate() {
-		// pra que serve esse método mesmo?
-		return true;
-	}
-	
-	private boolean validationUpdate() {
-		return true;
-	}
-
 }

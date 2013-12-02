@@ -22,22 +22,24 @@ public class UserService {
 	}
 
 	public User save(User user) throws Exception {
-		Login login = user.getLogin();
+//		Login login = user.getLogin();
 		
 		if (!validateFields(user)) {
 			throw new Exception();
 		}
 		
-		login = loginService.save(login);
-		if (login.getId() == null || login.getId() <= 0) {
-			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
-			throw new Exception(message);
-		}
+//		login = loginService.save(login);
+//		if (login.getId() == null || login.getId() <= 0) {
+//			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
+//			throw new Exception(message);
+//		}
 		
-		user.setLogin(login);
+//		user.setLogin(login);
+		user.getAddress().setUser(user);
+		user.getLogin().setUser(user);
 		user = userDAO.save(user);
 		if (user.getId() == null || user.getId() <= 0) {
-			loginService.delete(login);
+//			loginService.delete(login);
 			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
 			throw new Exception(message);
 		}

@@ -22,8 +22,6 @@ public class RegisterUserManager {
 	public RegisterUserManager() {
 		userService = new UserService();
 		user = new User();
-		user.setLogin(new Login());
-		user.setAddress(new Address());
 		messages = new LinkedList<String>();
 	}
 	

@@ -7,7 +7,7 @@ public interface GenericDao<T> {
 	
 	T save(T entity);
 	
-	void delete(T entity);
+	boolean delete(T entity);
 	
 	List<T> listAll();
 

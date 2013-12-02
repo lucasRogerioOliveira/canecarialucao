@@ -3,6 +3,7 @@ package com.canecaria.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Address { 
@@ -16,6 +17,9 @@ public class Address {
 	private String number;
 	
 	private String complement;
+	
+	@OneToOne
+	private User user;
 	
 	public Address() {
 
@@ -52,6 +56,12 @@ public class Address {
 	public void setComplement(String complement) {
 		this.complement = complement;
 	}
-	
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }

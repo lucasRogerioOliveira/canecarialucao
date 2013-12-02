@@ -8,6 +8,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 import com.canecaria.type.TypePermission;
@@ -28,6 +29,9 @@ public class Login {
 
 	@Enumerated(EnumType.STRING)
 	private TypePermission permission;
+	
+	@OneToOne
+	private User user;
 
 	public Login() {
 
@@ -71,5 +75,13 @@ public class Login {
 
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

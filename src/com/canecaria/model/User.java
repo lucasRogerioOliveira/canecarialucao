@@ -2,6 +2,7 @@ package com.canecaria.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 public class User {
@@ -26,16 +29,20 @@ public class User {
 
 	private String rg;
 	
-	@Column(length=11)
 	private String cpf;
 	
 	private String gender;
 	
-	@OneToOne
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
 	private Address address;
 
-	@OneToOne
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
 	private Login login;
+	
+	public User() {
+		address = new Address();
+		login = new Login();
+	}
 
 	public Long getId() {
 		return id;

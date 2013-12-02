@@ -17,21 +17,58 @@ public class UserService {
 	}
 
 	public User save(User user) throws Exception {
-
-		verificarUsuarioSalvar(user);
-		Login login = (Login) loginService.save(user.getLogin());
-		user.getLogin().setId(login.getId());
+		;
+		Login login = user.getLogin();
+		if (formatUsername(user) & isUsernameAvailable(user) & matchPassword(user)) {
+			login = (Login) loginService.save(login);
+			user.setLogin(login);
+		} else {
+			throw new Exception();
+		}
+		
 		return userDAO.save(user);
 	}
-
-	private boolean verificarUsuarioSalvar(User user) throws Exception {
-
-		List<User> result = userDAO.searchByUsername(user.getLogin()
-				.getUserName());
-		if (result.size() >= 1) {
-			throw new Exception(
-					"Não foi possível salvar novo usuário. Login já cadastrado.");
+	
+	private boolean formatUsername(User user) {
+		Login login = user.getLogin();
+		String username = login.getUserName();
+		username = username.trim();
+		username = username.toLowerCase();
+		login.setUserName(username);
+		
+		if (username == null || username.equals("")) {
+			String message = "Campo login vazio. Insira um login para efetivar o cadastro.";
+			login.getMessages().add(message);
+			return false;
 		}
+		
+		return true;
+	}
+
+	private boolean matchPassword(User user) {
+		Login login = user.getLogin();
+		String password = login.getPassword();
+		String confirmPassword = login.getConfirmPassword();
+		
+		if (password != confirmPassword) {
+			String message = "As senhas não conferem. Digite novamente";
+			login.getMessages().add(message);
+		}
+			
+		return true;
+	}
+	
+	private boolean isUsernameAvailable(User user) {
+		Login login = user.getLogin();
+		String username = login.getUserName();
+		List<User> result = userDAO.searchByUsername(username);
+		
+		if (result.size() >= 1) {
+			String message = "Não foi possível salvar novo usuário. Este login já está cadastrado.";
+			login.getMessages().add(message);
+			return false;
+		}
+		
 		return true;
 	}
 }

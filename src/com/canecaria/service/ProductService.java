@@ -1,5 +1,7 @@
 package com.canecaria.service;
 
+import java.util.List;
+
 import com.canecaria.dao.ProductDaoImpl;
 import com.canecaria.model.Product;
 
@@ -11,6 +13,7 @@ import com.canecaria.model.Product;
 public class ProductService {
 	
 	private ProductDaoImpl productDao;
+	List<String> messages;
 	
 	public Product save(Product product) throws Exception {
 		validateProductSave(product);

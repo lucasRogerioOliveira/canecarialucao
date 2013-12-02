@@ -17,7 +17,6 @@ public class UserService {
 	}
 
 	public User save(User user) throws Exception {
-		;
 		Login login = user.getLogin();
 		if (formatUsername(user) & isUsernameAvailable(user) & matchPassword(user)) {
 			login = (Login) loginService.save(login);

@@ -22,6 +22,8 @@ public class Product {
 	@Id
 	private Long id;
 	
+	private String name;
+	
 	private String description;
 	
 	private Integer quantity;
@@ -91,5 +93,13 @@ public class Product {
 
 	public void setSpec(Specification spec) {
 		this.spec = spec;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

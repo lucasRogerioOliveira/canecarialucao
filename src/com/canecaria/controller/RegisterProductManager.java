@@ -40,4 +40,28 @@ public class RegisterProductManager {
 		
 	}
 
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public Specification getSpec() {
+		return spec;
+	}
+
+	public void setSpec(Specification spec) {
+		this.spec = spec;
+	}
+
+	public String getMsgAnswer() {
+		return msgAnswer;
+	}
+
+	public void setMsgAnswer(String msgAnswer) {
+		this.msgAnswer = msgAnswer;
+	}
+
 }

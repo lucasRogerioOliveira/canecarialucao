@@ -1,8 +1,11 @@
 package com.canecaria.service;
 
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.canecaria.dao.UserDaoImpl;
+import com.canecaria.model.Address;
 import com.canecaria.model.Login;
 import com.canecaria.model.User;
 
@@ -10,23 +13,49 @@ public class UserService {
 
 	private UserDaoImpl userDAO;
 	private LoginService loginService;
+	private List<String> messages;
 
 	public UserService() {
 		userDAO = new UserDaoImpl();
 		loginService = new LoginService();
+		messages = new LinkedList<String>();
 	}
 
 	public User save(User user) throws Exception {
-		;
 		Login login = user.getLogin();
-		if (formatUsername(user) & isUsernameAvailable(user) & matchPassword(user)) {
-			login = (Login) loginService.save(login);
-			user.setLogin(login);
-		} else {
+		
+		if (!validateFields(user)) {
 			throw new Exception();
 		}
 		
-		return userDAO.save(user);
+		login = loginService.save(login);
+		if (login.getId() == null || login.getId() <= 0) {
+			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
+			throw new Exception(message);
+		}
+		
+		user.setLogin(login);
+		user = userDAO.save(user);
+		
+		if (user.getId() == null && user.getId() <= 0) {
+			loginService.delete(login);
+			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
+			throw new Exception(message);
+		}
+		
+		return user;
+	}
+	
+	private boolean validateFields(User user) {
+		if (formatUsername(user) & isUsernameAvailable(user) & isValidPassword(user)
+				& isValidConfirmPassword(user) & matchPassword(user) & isValidName(user) 
+				& isValidBirthday(user) & isValidRG(user) & isValidCPF(user) 
+				& isValidCEP(user) & isValidNumber(user) & isValidComplement(user)) {
+			
+			return true;
+		}
+		
+		return false;
 	}
 	
 	private boolean formatUsername(User user) {
@@ -37,8 +66,8 @@ public class UserService {
 		login.setUserName(username);
 		
 		if (username == null || username.equals("")) {
-			String message = "Campo login vazio. Insira um login para efetivar o cadastro.";
-			login.getMessages().add(message);
+			String message = "Campo login está vazio.";
+			messages.add(message);
 			return false;
 		}
 		
@@ -50,9 +79,10 @@ public class UserService {
 		String password = login.getPassword();
 		String confirmPassword = login.getConfirmPassword();
 		
-		if (password != confirmPassword) {
+		if (!password.equals(confirmPassword)) {
 			String message = "As senhas não conferem. Digite novamente";
-			login.getMessages().add(message);
+			messages.add(message);
+			return false;
 		}
 			
 		return true;
@@ -61,14 +91,126 @@ public class UserService {
 	private boolean isUsernameAvailable(User user) {
 		Login login = user.getLogin();
 		String username = login.getUserName();
-		List<User> result = userDAO.searchByUsername(username);
+		User result = userDAO.searchByUsername(username);
 		
-		if (result.size() >= 1) {
-			String message = "Não foi possível salvar novo usuário. Este login já está cadastrado.";
-			login.getMessages().add(message);
+		if (result != null /*&& result.size() >= 1*/) {
+			String message = "Este login já sendo usado por outra pessoa.";
+			messages.add(message);
 			return false;
 		}
 		
 		return true;
+	}
+	
+	private boolean isValidPassword(User user) {
+		Login login = user.getLogin();
+		String password = login.getPassword();
+		if (password == null || password.equals("")) {
+			String message = "O campo \"Senha\" é obrigatório.";
+			messages.add(message);
+			return false;
+		} else if (password.length() < 6) {
+			String message = "Sua senha deve conter no mínimo 6 caracteres";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidConfirmPassword(User user) {
+		Login login = user.getLogin();
+		String confirmPassword = login.getConfirmPassword();
+		if (confirmPassword == null || confirmPassword.equals("")) {
+			String message = "O campo \"Confirmar senha\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidName(User user) {
+		String name = user.getName();
+		if (name == null || name.equals("")) {
+			String message = "O campo \"Nome\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidBirthday(User user) {
+		Date birthday = user.getBirthday();
+		if (birthday == null) {
+			String message = "O campo \"Nascimento\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidRG(User user) {
+		String rg = user.getRg();
+		if (rg == null || rg.equals("")) {
+			String message = "O campo \"RG\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidCPF(User user) {
+		String cpf = user.getCpf();
+		if (cpf == null || cpf.equals("")) {
+			String message = "O campo \"CPF\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidCEP(User user) {
+		Address address = user.getAddress();
+		String cep = address.getCep();
+		if (cep == null || cep.equals("")) {
+			String message = "O campo \"CEP\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidNumber(User user) {
+		Address address = user.getAddress();
+		String number = address.getNumber();
+		if (number == null || number.equals("")) {
+			String message = "O campo \"Número\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean isValidComplement(User user) {
+		Address address = user.getAddress();
+		String complement = address.getComplement();
+		if (complement == null || complement.equals("")) {
+			String message = "O campo \"Complemento\" é obrigatório.";
+			messages.add(message);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public List<String> getMessages() {
+		return messages;
 	}
 }

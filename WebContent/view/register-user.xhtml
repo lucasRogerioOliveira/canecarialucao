@@ -47,7 +47,7 @@
 
 		<div class="register-form">
 			<ul>
-				<ui:repeat value="#{registerUserManager.user.login.messages}" var="message">
+				<ui:repeat value="#{registerUserManager.messages}" var="message">
     				<li>#{message}</li>
 				</ui:repeat>
 			</ul>
@@ -57,25 +57,25 @@
 			<div class="register-group">
 				<h:inputText class="input-register"
 					value="#{registerUserManager.user.login.userName}" />
-				<label class="label-register">Login:</label>
+				<label class="label-register">Login:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputSecret class="input-register"
 					value="#{registerUserManager.user.login.password}" />
-				<label class="label-register">Senha:</label>
+				<label class="label-register">Senha:*</label>
 			</div>
 			
 			<div class="register-group">
 				<h:inputSecret class="input-register"
 					value="#{registerUserManager.user.login.confirmPassword}" />
-				<label class="label-register">Confirmar senha:</label>
+				<label class="label-register">Confirmar senha:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
 					value="#{registerUserManager.user.name}" />
-				<label class="label-register">Nome:</label>
+				<label class="label-register">Nome:*</label>
 			</div>
 
 			<div class="register-group">
@@ -83,7 +83,7 @@
 					value="#{registerUserManager.user.birthday}">
 					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</h:inputText>
-				<label class="label-register">Nascimento:</label>
+				<label class="label-register">Nascimento:*</label>
 			</div>
 
 			<div class="register-group">
@@ -98,50 +98,39 @@
 			<div class="register-group">
 				<h:inputText class="input-register"
 					value="#{registerUserManager.user.rg}" />
-				<label class="label-register">RG:</label>
+				<label class="label-register">RG:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
 					value="#{registerUserManager.user.cpf}" />
-				<label class="label-register">CPF:</label>
+				<label class="label-register">CPF:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
 					value="#{registerUserManager.user.phone}" />
-				<label class="label-register">Fone:</label>
+				<label class="label-register">Telefone:</label>
 			</div>
 
 			<div class="register-group">
-				<h:inputText class="input-register" />
-				<label class="label-register">Rua:</label>
+				<h:inputText class="input-register" value="#{registerUserManager.user.address.cep}" />
+				<label class="label-register">CEP:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
 					value="#{registerUserManager.user.address.number}" />
-				<label class="label-register">Número:</label>
+				<label class="label-register">Número:*</label>
 			</div>
 
 			<div class="register-group">
-				<h:inputText class="input-register" />
-				<label class="label-register">Bairro:</label>
-			</div>
-
-			<div class="register-group">
-				<label class="label-register">Foto:</label>
-				<div class="register-picture">
-					<img src="" class="register-photo" /> <br />
-					<button class="btn btn-ok">
-						+ Enviar <input type="file" />
-					</button>
-				</div>
+				<h:inputText class="input-register" value="#{registerUserManager.user.address.complement}"/>
+				<label class="label-register">Complemento:*</label>
 			</div>
 
 			<div class="centered-buttons">
-				<h:commandButton value="adicionar" class="btn btn-ok"
-					action="#{registerUserManager.addUserAction}" />
+				<h:commandButton value="adicionar" class="btn btn-ok" action="#{registerUserManager.addUserAction}" />
 				<button class="btn">Cancelar</button>
 			</div>
 		</h:form>

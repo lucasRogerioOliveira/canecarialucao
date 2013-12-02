@@ -32,12 +32,14 @@ public abstract class GenericDaoImpl<T/*, Long*/> implements GenericDao<T/*, Lon
 		entityManager.getTransaction().begin();
 		entityManager.remove(entity);
 		entityManager.getTransaction().commit();
+		entityManager.close();
 	}
 
 	public T searchById(final Class<T> entity, Long id) {
 		entityManager.getTransaction().begin();
 		entityManager.find(entity, id);
 		entityManager.getTransaction().commit();
+		entityManager.close();
 		return null;
 	}
 

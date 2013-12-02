@@ -1,7 +1,5 @@
 package com.canecaria.dao;
 
-import java.util.List;
-
 import com.canecaria.model.User;
 
 public interface UserDao {
@@ -12,6 +10,6 @@ public interface UserDao {
 	 * @param userName
 	 * @return user - {@link User}
 	 */
-	List<User> searchByUsername(String userName);
+	User searchByUsername(String userName);
 
 }

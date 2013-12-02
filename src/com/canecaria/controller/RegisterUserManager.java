@@ -1,5 +1,6 @@
 package com.canecaria.controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -15,24 +16,25 @@ import com.canecaria.service.UserService;
 public class RegisterUserManager {
 	
 	private User user;
-	
 	private UserService userService;
-	
-	private List<String> msgAnswer;
+	private List<String> messages;
 	
 	public RegisterUserManager() {
 		userService = new UserService();
 		user = new User();
 		user.setLogin(new Login());
 		user.setAddress(new Address());
+		messages = new LinkedList<String>();
 	}
 	
 	public void addUserAction() {
+		messages.clear();
+		
 		try {
 			userService.save(user);
-			msgAnswer.add("Cadastrado com sucesso");
+			messages.add("Cadastrado com sucesso");
 		} catch (Exception e) {
-			msgAnswer = user.getLogin().getMessages();
+			messages = userService.getMessages();
 		}
 	}
 
@@ -43,4 +45,8 @@ public class RegisterUserManager {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public List<String> getMessages() {
+		return messages;
+	}	
 }

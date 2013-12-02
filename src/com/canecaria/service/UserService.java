@@ -36,8 +36,7 @@ public class UserService {
 		
 		user.setLogin(login);
 		user = userDAO.save(user);
-		
-		if (user.getId() == null && user.getId() <= 0) {
+		if (user.getId() == null || user.getId() <= 0) {
 			loginService.delete(login);
 			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
 			throw new Exception(message);
@@ -91,9 +90,9 @@ public class UserService {
 	private boolean isUsernameAvailable(User user) {
 		Login login = user.getLogin();
 		String username = login.getUserName();
-		User result = userDAO.searchByUsername(username);
+		List<User> result = userDAO.searchByUsername(username);
 		
-		if (result != null /*&& result.size() >= 1*/) {
+		if (result != null && result.size() >= 1) {
 			String message = "Este login já sendo usado por outra pessoa.";
 			messages.add(message);
 			return false;

@@ -9,12 +9,12 @@ import com.canecaria.model.Address;
 import com.canecaria.model.Login;
 import com.canecaria.model.User;
 
-public class UserService {
+public class RegisterUserService {
 
 	private UserDaoImpl userDao;
 	private List<String> messages;
 
-	public UserService() {
+	public RegisterUserService() {
 		userDao = new UserDaoImpl();
 		messages = new LinkedList<String>();
 	}

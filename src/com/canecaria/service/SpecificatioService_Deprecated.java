@@ -3,7 +3,7 @@ package com.canecaria.service;
 import com.canecaria.dao.SpecificationDaoImpl;
 import com.canecaria.model.Specification;
 
-public class SpecificatioService {
+public class SpecificatioService_Deprecated {
 	
 	private SpecificationDaoImpl specDao;
 	

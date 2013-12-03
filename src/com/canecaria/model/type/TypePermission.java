@@ -1,4 +1,4 @@
-package com.canecaria.type;
+package com.canecaria.model.type;
 
 /**
  * Define o tipo de permissão de acesso.

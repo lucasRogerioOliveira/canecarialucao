@@ -1,6 +1,5 @@
 package com.canecaria.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -8,13 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import com.canecaria.type.Theme;
+import com.canecaria.model.type.Theme;
 
-/**
- * Unity persistence Product.
- * @author bruna
- *
- */
 @Entity
 public class Product {
 	
@@ -28,7 +22,6 @@ public class Product {
 	
 	private Integer quantity;
 	
-	@Column(nullable=false)
 	private Double costPrice;
 	
 	private Double salePrice;
@@ -38,6 +31,10 @@ public class Product {
 	
 	@OneToOne
 	private Specification spec;
+	
+	public Product() {
+	
+	}
 
 	public Long getId() {
 		return id;

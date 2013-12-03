@@ -76,7 +76,7 @@ public class RegisterUserService {
 			
 		return true;
 	}
-	
+
 	private boolean isUsernameAvailable(User user) {
 		Login login = user.getLogin();
 		String username = login.getUserName();

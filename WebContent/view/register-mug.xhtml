@@ -10,55 +10,55 @@
       
       <h1 class="section-title">Cadastrar caneca</h1>
       
-      <form action="" class="register-form">
+      <h:form action="" class="register-form">
       	<div class="register-group">
-          <h:inputText value="#{registerProductManager.product.name}" class="input-register"/>
+          <h:inputText value="#{registerProductMB.product.name}" class="input-register"/>
           <label class="label-register">Nome da estampa:</label>
         </div>
 
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.theme}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.theme}" class="input-register" />
           <label class="label-register">Tema:</label>
         </div>
 
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.costPrice}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.costPrice}" class="input-register" />
           <label class="label-register">Preço de custo:</label>
         </div>
         
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.costPrice}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.salePrice}" class="input-register" />
           <label class="label-register">Preço de venda:</label>
         </div>
 
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.spec.color}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.spec.color}" class="input-register" />
           <label class="label-register">Cor:</label>
         </div>
 
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.spec.weight}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.spec.weight}" class="input-register" />
           <label class="label-register">Peso:</label>
         </div>
         
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.spec.material}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.spec.material}" class="input-register" />
           <label class="label-register">Material:</label>
         </div>
         
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.spec.height}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.spec.height}" class="input-register" />
           <label class="label-register">Altura:</label>
         </div>
         
         <div class="register-group">
-          <h:inputText value="#{registerProductManager.product.spec.weight}" class="input-register" />
+          <h:inputText value="#{registerProductMB.product.spec.width}" class="input-register" />
           <label class="label-register">Largura:</label>
         </div>
 
         <div class="register-group">
           <button class="btn pull-right">+ adicionar <input type="file" /></button>
-          <h: class="input-register picture" disabled="true" />
+          <input type="text" class="input-register picture" disabled="true" />
           <label class="label-register">estampa:</label>
         </div>
 
@@ -93,7 +93,7 @@
           <button class="btn">Cancelar</button>
         </div>
 
-      </form>
+      </h:form>
       
     </div>
 	</ui:define>

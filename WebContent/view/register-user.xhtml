@@ -47,7 +47,7 @@
 
 		<div class="register-form">
 			<ul>
-				<ui:repeat value="#{registerUserManager.messages}" var="message">
+				<ui:repeat value="#{registerUserMB.messages}" var="message">
     				<li>#{message}</li>
 				</ui:repeat>
 			</ul>
@@ -56,31 +56,31 @@
 		<h:form class="register-form">
 			<div class="register-group">
 				<h:inputText class="input-register"
-					value="#{registerUserManager.user.login.userName}" />
+					value="#{registerUserMB.user.login.userName}" />
 				<label class="label-register">Login:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputSecret class="input-register"
-					value="#{registerUserManager.user.login.password}" />
+					value="#{registerUserMB.user.login.password}" />
 				<label class="label-register">Senha:*</label>
 			</div>
 			
 			<div class="register-group">
 				<h:inputSecret class="input-register"
-					value="#{registerUserManager.user.login.confirmPassword}" />
+					value="#{registerUserMB.user.login.confirmPassword}" />
 				<label class="label-register">Confirmar senha:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
-					value="#{registerUserManager.user.name}" />
+					value="#{registerUserMB.user.name}" />
 				<label class="label-register">Nome:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
-					value="#{registerUserManager.user.birthday}">
+					value="#{registerUserMB.user.birthday}">
 					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</h:inputText>
 				<label class="label-register">Nascimento:*</label>
@@ -88,7 +88,7 @@
 
 			<div class="register-group">
 				<h:selectOneMenu class="input-register"
-					value="#{registerUserManager.user.gender}">
+					value="#{registerUserMB.user.gender}">
 					<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
 					<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
 				</h:selectOneMenu>
@@ -97,35 +97,35 @@
 
 			<div class="register-group">
 				<h:inputText class="input-register"
-					value="#{registerUserManager.user.rg}" />
+					value="#{registerUserMB.user.rg}" />
 				<label class="label-register">RG:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
-					value="#{registerUserManager.user.cpf}" />
+					value="#{registerUserMB.user.cpf}" />
 				<label class="label-register">CPF:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
-					value="#{registerUserManager.user.phone}" />
+					value="#{registerUserMB.user.phone}" />
 				<label class="label-register">Telefone:</label>
 			</div>
 
 			<div class="register-group">
-				<h:inputText class="input-register" value="#{registerUserManager.user.address.cep}" />
+				<h:inputText class="input-register" value="#{registerUserMB.user.address.cep}" />
 				<label class="label-register">CEP:*</label>
 			</div>
 
 			<div class="register-group">
 				<h:inputText class="input-register"
-					value="#{registerUserManager.user.address.number}" />
+					value="#{registerUserMB.user.address.number}" />
 				<label class="label-register">Número:*</label>
 			</div>
 
 			<div class="register-group">
-				<h:inputText class="input-register" value="#{registerUserManager.user.address.complement}"/>
+				<h:inputText class="input-register" value="#{registerUserMB.user.address.complement}"/>
 				<label class="label-register">Complemento:*</label>
 			</div>
 

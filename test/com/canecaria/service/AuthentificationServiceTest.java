@@ -10,7 +10,7 @@ import com.canecaria.model.Login;
 import com.canecaria.model.User;
 
 public class AuthentificationServiceTest {
-	private AuthentificationService service;
+	private LoginService service;
 	private User user;
 	private Login login;
 	private UserDaoImpl userDao;
@@ -19,7 +19,7 @@ public class AuthentificationServiceTest {
 	public void init() {
 		user = new User();
 		userDao = new UserDaoImpl();
-		service = new AuthentificationService();
+		service = new LoginService();
 	}
 	
 

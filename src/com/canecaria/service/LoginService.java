@@ -1,21 +1,63 @@
 package com.canecaria.service;
 
-import com.canecaria.dao.LoginDaoImpl;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+
+import com.canecaria.dao.UserDaoImpl;
 import com.canecaria.model.Login;
+import com.canecaria.model.User;
 
 public class LoginService {
-	
-	private LoginDaoImpl<Login> loginDAO;
+	private UserDaoImpl userDao;
+	private List<String> messages;
 	
 	public LoginService() {
-		loginDAO = new LoginDaoImpl<Login>();
+		messages = new LinkedList<String>();
+		userDao = new UserDaoImpl();
 	}
 	
-	public Login save(Login login) {
-		return loginDAO.save(login);
-	} 
+	public boolean loginService(Login loginVo) {
+		if (loginVo == null) {
+			return false;
+		}
+		
+		String usernameVo = loginVo.getUserName();
+		usernameVo = usernameVo.trim();
+		usernameVo = usernameVo.toLowerCase();
+		List<User> users = userDao.searchByUsername(usernameVo);
+		
+		if (users != null && users.size() > 0) {
+			User user = users.get(0);
+			Login loginDB =  user.getLogin();
+			String passwordDB = loginDB.getPassword();
+			String passwordVo = loginVo.getPassword();
+			
+			if (passwordDB.equals(passwordVo)) {
+				FacesContext context = FacesContext.getCurrentInstance();
+				ExternalContext externaContext = context.getExternalContext();
+				HttpSession session = (HttpSession) externaContext.getSession(true);
+				session.setAttribute("userId", user.getId());
+				System.out.println("Usuário logado"); // Remover esta linha
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
-	public void delete(Login login) {
-		loginDAO.delete(login);
+	public void logoutService() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		ExternalContext externaContext = context.getExternalContext();
+		HttpSession session = (HttpSession) externaContext.getSession(false);
+		session.invalidate();
+		System.out.println("Usuário deslogado");
+	}
+
+	public List<String> getMessages() {
+		return messages;
 	}
 }

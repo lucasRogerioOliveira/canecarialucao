@@ -1,11 +1,9 @@
 package com.canecaria.model;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -30,8 +28,8 @@ public class Login {
 	@Enumerated(EnumType.STRING)
 	private TypePermission permission;
 	
-	@OneToOne
-	private User user;
+	@OneToOne(fetch=FetchType.LAZY, mappedBy="login")
+	private User owner;
 
 	public Login() {
 
@@ -77,11 +75,11 @@ public class Login {
 		this.confirmPassword = confirmPassword;
 	}
 
-	public User getUser() {
-		return user;
+	public User getOwner() {
+		return owner;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
 }

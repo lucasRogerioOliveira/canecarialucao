@@ -11,35 +11,23 @@ import com.canecaria.model.User;
 
 public class UserService {
 
-	private UserDaoImpl userDAO;
-	private LoginService loginService;
+	private UserDaoImpl userDao;
 	private List<String> messages;
 
 	public UserService() {
-		userDAO = new UserDaoImpl();
-		loginService = new LoginService();
+		userDao = new UserDaoImpl();
 		messages = new LinkedList<String>();
 	}
 
 	public User save(User user) throws Exception {
-//		Login login = user.getLogin();
-		
 		if (!validateFields(user)) {
 			throw new Exception();
 		}
 		
-//		login = loginService.save(login);
-//		if (login.getId() == null || login.getId() <= 0) {
-//			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
-//			throw new Exception(message);
-//		}
-		
-//		user.setLogin(login);
-		user.getAddress().setUser(user);
-		user.getLogin().setUser(user);
-		user = userDAO.save(user);
+		user.getAddress().setOwner(user);
+		user.getLogin().setOwner(user);
+		user = userDao.save(user);
 		if (user.getId() == null || user.getId() <= 0) {
-//			loginService.delete(login);
 			String message = "Desculpe, não foi possível realizar seu cadastro. Tente novamente mais tarde";
 			throw new Exception(message);
 		}
@@ -92,10 +80,10 @@ public class UserService {
 	private boolean isUsernameAvailable(User user) {
 		Login login = user.getLogin();
 		String username = login.getUserName();
-		List<User> result = userDAO.searchByUsername(username);
+		List<User> result = userDao.searchByUsername(username);
 		
 		if (result != null && result.size() >= 1) {
-			String message = "Este login já sendo usado por outra pessoa.";
+			String message = "O login \"" + username + "\" já sendo usado por outra pessoa.";
 			messages.add(message);
 			return false;
 		}

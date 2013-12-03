@@ -4,6 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
+      
 	<ui:composition template="templates/base.xhtml">
 		<ui:define name="content">
 			<div class="container">
@@ -25,13 +26,13 @@
 			          <header class="aside-login-header">login</header>
 			          
 			          <div class="aside-login-content">
-			            <form method="post">
+			            <h:form>
 			              <label class="aside-login-label">login</label>
-			              <input type="text" placeholder="login" class="aside-input"/>
+			              <h:inputText value="#{loginMB.loginVo.userName}" placeholder="login" class="aside-input"/>
 			              <label class="aside-login-label">senha</label>
-			              <input type="text" placeholder="senha" class="aside-input"/>
-			              <input type="submit" value="entrar" class="btn btn-canecaria"/>
-			            </form>
+			              <h:inputSecret value="#{loginMB.loginVo.password}" placeholder="senha" class="aside-input"/>
+			              <h:commandButton value="Entrar" class="btn btn-canecaria" action="#{loginMB.actionLogin}" />
+			            </h:form>
 			            <a href="#" class="aside-login-link">Esqueceu sua senha?</a>
 			            <br/>
 			            <a href="#" class="aside-login-link">Esqueceu seu login?</a>

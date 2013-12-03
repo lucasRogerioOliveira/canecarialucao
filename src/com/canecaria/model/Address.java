@@ -1,6 +1,7 @@
 package com.canecaria.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -18,8 +19,8 @@ public class Address {
 	
 	private String complement;
 	
-	@OneToOne
-	private User user;
+	@OneToOne(fetch=FetchType.LAZY, mappedBy="address")
+	private User owner;
 	
 	public Address() {
 
@@ -57,11 +58,11 @@ public class Address {
 		this.complement = complement;
 	}
 
-	public User getUser() {
-		return user;
+	public User getOwner() {
+		return owner;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
 }

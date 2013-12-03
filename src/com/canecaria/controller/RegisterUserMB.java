@@ -13,19 +13,19 @@ import com.canecaria.service.UserService;
 
 @ManagedBean
 @SessionScoped
-public class RegisterUserManager {
+public class RegisterUserMB {
 	
 	private User user;
 	private UserService userService;
 	private List<String> messages;
 	
-	public RegisterUserManager() {
+	public RegisterUserMB() {
 		userService = new UserService();
 		user = new User();
 		messages = new LinkedList<String>();
 	}
 	
-	public void addUserAction() {
+	public String addUserAction() {
 		messages.clear();
 		
 		try {
@@ -34,6 +34,8 @@ public class RegisterUserManager {
 		} catch (Exception e) {
 			messages = userService.getMessages();
 		}
+		
+		return "";
 	}
 
 	public User getUser() {

@@ -3,15 +3,12 @@ package com.canecaria.model;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.Cascade;
 
 @Entity
 public class User {
@@ -33,10 +30,10 @@ public class User {
 	
 	private String gender;
 	
-	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL)
 	private Address address;
 
-	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.ALL)
 	private Login login;
 	
 	public User() {

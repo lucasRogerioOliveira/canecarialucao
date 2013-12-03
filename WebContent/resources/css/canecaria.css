@@ -761,11 +761,12 @@ a {
 
 /* line 31, ../sass/components/_menu.scss */
 .login {
+  color: white;
   float: right;
   font-family: Bebas Neue;
   font-size: 24px;
   position: relative;
-  top: 29px;
+  top: 13px;
   right: 76px;
 }
 

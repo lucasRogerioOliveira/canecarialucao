@@ -12,7 +12,7 @@ import com.canecaria.model.Specification;
 
 @ManagedBean
 @RequestScoped
-public class RegisterProductManager {
+public class RegisterProductMB {
 	
 	private Product product;
 	private Specification spec;
@@ -22,7 +22,7 @@ public class RegisterProductManager {
 //	private ProductService productService;
 //	private SpecificatioService specService;
 	
-	public RegisterProductManager() {
+	public RegisterProductMB() {
 		product = new Product();
 		spec = new Specification();
 //		productService = new ProductService();

@@ -5,15 +5,14 @@ import java.util.List;
 import com.canecaria.dao.ProductDaoImpl;
 import com.canecaria.model.Product;
 
-/**
- * Classe service de Product
- * @author bruna
- *
- */
-public class ProductService {
+public class RegisterProductService {
 	
 	private ProductDaoImpl productDao;
-	List<String> messages;
+	private List<String> messages;
+	
+	public RegisterProductService() {
+		productDao = new ProductDaoImpl();
+	}
 	
 	public Product save(Product product) throws Exception {
 		validateProductSave(product);
@@ -26,6 +25,10 @@ public class ProductService {
 			throw new Exception("Não foi possível salvar novo Produto.");
 		}
 		return true;
+	}
+
+	public List<String> getMessages() {
+		return messages;
 	}
 	
 	

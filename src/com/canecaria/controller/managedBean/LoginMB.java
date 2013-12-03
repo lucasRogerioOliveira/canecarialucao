@@ -1,4 +1,4 @@
-package com.canecaria.controller;
+package com.canecaria.controller.managedBean;
 
 import java.util.LinkedList;
 import java.util.List;

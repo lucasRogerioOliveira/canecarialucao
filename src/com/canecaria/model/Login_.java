@@ -1,9 +1,10 @@
 package com.canecaria.model;
 
-import com.canecaria.type.TypePermission;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
+
+import com.canecaria.model.type.TypePermission;
 
 @Generated(value="Dali", date="2013-11-20T08:07:06.573-0200")
 @StaticMetamodel(Login.class)

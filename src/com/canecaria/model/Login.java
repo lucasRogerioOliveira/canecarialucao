@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
-import com.canecaria.type.TypePermission;
+import com.canecaria.model.type.TypePermission;
 
 @Entity
 public class Login {

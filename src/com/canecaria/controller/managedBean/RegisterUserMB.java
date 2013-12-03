@@ -1,4 +1,4 @@
-package com.canecaria.controller;
+package com.canecaria.controller.managedBean;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -9,18 +9,18 @@ import javax.faces.bean.SessionScoped;
 import com.canecaria.model.Address;
 import com.canecaria.model.Login;
 import com.canecaria.model.User;
-import com.canecaria.service.UserService;
+import com.canecaria.service.RegisterUserService;
 
 @ManagedBean
 @SessionScoped
 public class RegisterUserMB {
 	
 	private User user;
-	private UserService userService;
+	private RegisterUserService userService;
 	private List<String> messages;
 	
 	public RegisterUserMB() {
-		userService = new UserService();
+		userService = new RegisterUserService();
 		user = new User();
 		messages = new LinkedList<String>();
 	}

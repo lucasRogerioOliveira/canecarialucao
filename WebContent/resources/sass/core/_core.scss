@@ -2,6 +2,15 @@
 @import "compass/reset";
 @import "compass/css3";
 
+@include font-face("Corbel", font-files("corbel-webfont.ttf", "corbel-webfont.woff",
+                                          "corbel-webfont.svg"), "corbel-webfont.eot");
+
+@include font-face("Bebas Neue", font-files("bebasneue-webfont.ttf", "bebasneue-webfont.woff",
+                                          "bebasneue-webfont.svg"), "bebasneue-webfont.eot");
+
+@include font-face("Lucida Sans", font-files("lsans-webfont.ttf", "lsans-webfont.woff",
+                                          "lsans-webfont.svg"), "lsans-webfont.eot");
+
 body {
   font-family: "Lucida Sans";
   background-image: image-url("backgrounds/pattern-bg.png");

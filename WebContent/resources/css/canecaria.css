@@ -901,6 +901,40 @@ a {
   padding: 0 8px;
 }
 
+/* line 87, ../sass/components/_menu.scss */
+.shopping-cart {
+  color: #fff;
+  background-color: #ae0405;
+  font-family: Bebas Neue;
+  font-size: 19px;
+  -webkit-box-shadow: 0 -30px 57px -31px black inset, 0 -1px #55090a inset;
+  -moz-box-shadow: 0 -30px 57px -31px black inset, 0 -1px #55090a inset;
+  box-shadow: 0 -30px 57px -31px black inset, 0 -1px #55090a inset;
+  position: fixed;
+  right: -72px;
+  top: 287px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+/* line 100, ../sass/components/_menu.scss */
+.shopping-cart:hover {
+  right: -3px;
+}
+/* line 104, ../sass/components/_menu.scss */
+.shopping-cart img {
+  width: 37px;
+  vertical-align: middle;
+  margin-right: 9px;
+}
+/* line 110, ../sass/components/_menu.scss */
+.shopping-cart a {
+  color: #fff;
+}
+
 /* line 5, ../sass/components/_products.scss */
 .product-box {
   -webkit-box-sizing: border-box;

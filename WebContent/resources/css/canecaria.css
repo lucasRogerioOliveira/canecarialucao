@@ -109,6 +109,12 @@ a {
   float: right;
 }
 
+/* line 1, ../sass/components/_backgrounds.scss */
+.banner-home {
+  position: relative;
+  top: 9px;
+}
+
 /* line 1, ../sass/components/_brands.scss */
 .brand-189px {
   width: 189px;

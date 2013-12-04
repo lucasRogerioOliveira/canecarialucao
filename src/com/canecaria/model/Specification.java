@@ -1,8 +1,10 @@
 package com.canecaria.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Specification {
@@ -22,7 +24,14 @@ public class Specification {
 	private String width;
 
 	private String material;
+	
+	@OneToOne(fetch=FetchType.EAGER, mappedBy="spec")
+	private Product owner;
 
+	public Specification() {
+	
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -78,7 +87,4 @@ public class Specification {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-	
-	
-
 }

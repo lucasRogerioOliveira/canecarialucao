@@ -9,12 +9,13 @@ import javax.servlet.http.HttpSession;
 
 import com.canecaria.model.Product;
 import com.canecaria.model.User;
+import com.canecaria.service.SaleService;
 
 public class SaleMB {
 	
 	private List<Product> products;
 	private User user;
-	private SaleServic saleService;
+	private SaleService saleService;
 	
 	public SaleMB() {
 		products = new ArrayList<>();
@@ -27,7 +28,7 @@ public class SaleMB {
 		ExternalContext externaContext = context.getExternalContext();
 		HttpSession session = (HttpSession) externaContext.getSession(true);
 		products = (List<Product>) session.getAttribute("cart");
-		user = session.getAttribute("usuarioLogado");
+		user = (User) session.getAttribute("usuarioLogado");
 	}
 
 }

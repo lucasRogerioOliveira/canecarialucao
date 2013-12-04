@@ -47,14 +47,20 @@
 			      <ul class="products">
 			      	<ui:repeat var="prod" value="#{inventoryMB.products}">
 				        <li class="product-box">
+				        <h:form>
 				          <p class="mugs-name">#{prod.name}</p>
 				          <div class="product">
 				            <img src="resources/images/mugs/mug.png" class="product-img"/>
 				            <footer class="footer-product">
 				              <button class="btn btn-canecaria">R$ #{prod.salePrice}</button>
-				              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
+				              <h:commandLink action="#{productDetailMB.actionShowDetails}" immediate="true" value="Ver detalhes">  
+      								<f:param name="#{productId}" value="#{prod.id}"/>  
+    						  </h:commandLink>  
+				              
+<!-- 				              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a> -->
 				            </footer>
 				          </div>
+				          </h:form>
 				        </li>
 			        </ui:repeat>
 			      </ul>

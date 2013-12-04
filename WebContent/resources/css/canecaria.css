@@ -70,23 +70,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 5, ../sass/core/_core.scss */
+@font-face {
+  font-family: "Corbel";
+  src: url('/resources/fonts/corbel-webfont.eot');
+  src: url('/resources/fonts/corbel-webfont.eot?#iefix') format('eot'), url('/resources/fonts/corbel-webfont.ttf') format('truetype'), url('/resources/fonts/corbel-webfont.woff') format('woff'), url('/resources/fonts/corbel-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url('/resources/fonts/bebasneue-webfont.eot');
+  src: url('/resources/fonts/bebasneue-webfont.eot?#iefix') format('eot'), url('/resources/fonts/bebasneue-webfont.ttf') format('truetype'), url('/resources/fonts/bebasneue-webfont.woff') format('woff'), url('/resources/fonts/bebasneue-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Lucida Sans";
+  src: url('/resources/fonts/lsans-webfont.eot');
+  src: url('/resources/fonts/lsans-webfont.eot?#iefix') format('eot'), url('/resources/fonts/lsans-webfont.ttf') format('truetype'), url('/resources/fonts/lsans-webfont.woff') format('woff'), url('/resources/fonts/lsans-webfont.svg') format('svg');
+}
+
+/* line 14, ../sass/core/_core.scss */
 body {
   font-family: "Lucida Sans";
   background-image: url('/resources/images/backgrounds/pattern-bg.png?1385548073');
 }
 
-/* line 10, ../sass/core/_core.scss */
+/* line 19, ../sass/core/_core.scss */
 a {
   text-decoration: none;
 }
 
-/* line 14, ../sass/core/_core.scss */
+/* line 23, ../sass/core/_core.scss */
 .pull-left {
   float: left;
 }
 
-/* line 18, ../sass/core/_core.scss */
+/* line 27, ../sass/core/_core.scss */
 .pull-right {
   float: right;
 }
@@ -373,6 +391,57 @@ a {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+}
+
+/* line 108, ../sass/components/_containers.scss */
+.payment-form-table {
+  background-color: #fff;
+  width: 100%;
+  border: 2px solid #dbdcda;
+  border-top: 0;
+}
+/* line 114, ../sass/components/_containers.scss */
+.payment-form-table .payment-form-header {
+  text-align: center;
+  line-height: 97px;
+}
+/* line 118, ../sass/components/_containers.scss */
+.payment-form-table .payment-form-header img {
+  vertical-align: middle;
+}
+/* line 123, ../sass/components/_containers.scss */
+.payment-form-table .payment-form-forms {
+  height: 211px;
+  padding-bottom: 26px;
+}
+/* line 128, ../sass/components/_containers.scss */
+.payment-form-table .payment-form-header, .payment-form-table .payment-form-forms {
+  border-left: 2px solid #dbdcda;
+}
+/* line 131, ../sass/components/_containers.scss */
+.payment-form-table .payment-form-header:first-child, .payment-form-table .payment-form-forms:first-child {
+  border-left: 0;
+}
+/* line 136, ../sass/components/_containers.scss */
+.payment-form-table span {
+  font-family: Bebas Neue;
+  font-size: 22px;
+  line-height: 36px;
+  width: 124px;
+  margin: 0 auto;
+  display: table;
+}
+
+/* line 146, ../sass/components/_containers.scss */
+.payment-form-actions {
+  height: 58px;
+  line-height: 58px;
+  padding: 0 15px;
+  border-top: 2px solid #dbdcda;
+}
+/* line 152, ../sass/components/_containers.scss */
+.payment-form-actions .btn {
+  margin-left: 10px;
 }
 
 /* line 3, ../sass/components/_css-properties.scss */
@@ -830,6 +899,40 @@ a {
   color: #6b430b;
   display: inline-block;
   padding: 0 8px;
+}
+
+/* line 87, ../sass/components/_menu.scss */
+.shopping-cart {
+  color: #fff;
+  background-color: #ae0405;
+  font-family: Bebas Neue;
+  font-size: 19px;
+  -webkit-box-shadow: 0 -30px 57px -31px black inset, 0 -1px #55090a inset;
+  -moz-box-shadow: 0 -30px 57px -31px black inset, 0 -1px #55090a inset;
+  box-shadow: 0 -30px 57px -31px black inset, 0 -1px #55090a inset;
+  position: fixed;
+  right: -72px;
+  top: 287px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+/* line 100, ../sass/components/_menu.scss */
+.shopping-cart:hover {
+  right: -3px;
+}
+/* line 104, ../sass/components/_menu.scss */
+.shopping-cart img {
+  width: 37px;
+  vertical-align: middle;
+  margin-right: 9px;
+}
+/* line 110, ../sass/components/_menu.scss */
+.shopping-cart a {
+  color: #fff;
 }
 
 /* line 5, ../sass/components/_products.scss */

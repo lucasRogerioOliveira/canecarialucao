@@ -83,3 +83,31 @@
     }
   }
 }
+
+.shopping-cart {
+  color: #fff;
+  background-color: $red-mid;
+  font-family: $Bebas-Neue;
+  font-size: 19px;
+  @include box-shadow(0 -30px 57px -31px black inset, 0 -1px $red-hard inset);
+  position: fixed;
+  right: -72px;
+  top: 287px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  @include transition(0.2s linear);
+
+  &:hover {
+    right: -3px;
+  }
+
+  img {
+    width: 37px;
+    vertical-align: middle;
+    margin-right: 9px;
+  }
+
+  a {
+    color: #fff;
+  }
+}

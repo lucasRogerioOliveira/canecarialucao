@@ -21,13 +21,15 @@ public class RegisterProductMB {
 		productService = new RegisterProductService(); 
 	}
 	
-	public void registerProduct() {
+	public String registerProduct() {
 		try {
 			productService.save(product);
 			messages.add("Cadastrado com sucesso");
 		} catch (Exception e) {
 			messages = productService.getMessages();
 		}
+		
+		return "register-mug";
 	}
 
 	public Product getProduct() {

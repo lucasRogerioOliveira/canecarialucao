@@ -1,13 +1,13 @@
 package com.canecaria.controller.managedBean;
 
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
-import com.canecaria.model.Address;
-import com.canecaria.model.Login;
 import com.canecaria.model.User;
 import com.canecaria.service.RegisterUserService;
 
@@ -25,17 +25,16 @@ public class RegisterUserMB {
 		messages = new LinkedList<String>();
 	}
 	
-	public String addUserAction() {
+	public void addUserAction() {
 		messages.clear();
 		
 		try {
 			userService.save(user);
 			messages.add("Cadastrado com sucesso");
+			FacesContext.getCurrentInstance().getExternalContext().redirect("/canecarialucao/");
 		} catch (Exception e) {
 			messages = userService.getMessages();
 		}
-		
-		return "";
 	}
 
 	public User getUser() {

@@ -40,8 +40,7 @@ public class LoginService {
 				FacesContext context = FacesContext.getCurrentInstance();
 				ExternalContext externaContext = context.getExternalContext();
 				HttpSession session = (HttpSession) externaContext.getSession(true);
-				session.setAttribute("userId", user.getId());
-				System.out.println("Usuário logado"); // Remover esta linha
+				session.setAttribute("usuarioLogado", user);
 				return true;
 			}
 		}
@@ -54,7 +53,6 @@ public class LoginService {
 		ExternalContext externaContext = context.getExternalContext();
 		HttpSession session = (HttpSession) externaContext.getSession(false);
 		session.invalidate();
-		System.out.println("Usuário deslogado"); // Remover esta linha
 	}
 
 	public List<String> getMessages() {

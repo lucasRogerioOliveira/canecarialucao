@@ -54,7 +54,7 @@ public class LoginService {
 		ExternalContext externaContext = context.getExternalContext();
 		HttpSession session = (HttpSession) externaContext.getSession(false);
 		session.invalidate();
-		System.out.println("Usuário deslogado");
+		System.out.println("Usuário deslogado"); // Remover esta linha
 	}
 
 	public List<String> getMessages() {

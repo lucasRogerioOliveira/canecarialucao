@@ -23,7 +23,8 @@ public class RegisterProductMB {
 	
 	public void registerProduct() {
 		try {
-			
+			productService.save(product);
+			messages.add("Cadastrado com sucesso");
 		} catch (Exception e) {
 			messages = productService.getMessages();
 		}

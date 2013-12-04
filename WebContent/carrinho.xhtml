@@ -3,118 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 	<ui:composition template="templates/base.xhtml">
 		<ui:define name="content">
 			<div class="container no-border">
       
       			<h1 class="section-title">canecas</h1>
 
-			      <section class="pull-right products-card">
-			
-			        <table class="product-card">
-			          <tr>
-			            <th class="pc-header">lorem impsu lectus</th>
-			            <th class="pc-header">quantidade</th>
-			            <th class="pc-header">preço</th>
-			          </tr>
-			          <tr>
-			            <td class="pc-product"><img src="resources/images/mugs/mug.png" class="product-img"/></td>
-			            <td class="pc-product">
-			              <input type="text" class="n-of-mugs" value="1"/>
-			              <button class="btn">+</button>
-			              <button class="btn">-</button>
-			            </td>
-			            <td class="pc-product">R$ 25,00</td>
-			          </tr>
-			        </table>
-			
-			        <table class="product-card">
-			          <tr>
-			            <th class="pc-header">lorem impsu lectus</th>
-			            <th class="pc-header">quantidade</th>
-			            <th class="pc-header">preço</th>
-			          </tr>
-			          <tr>
-			            <td class="pc-product"><img src="resources/images/mugs/mug.png" class="product-img"/></td>
-			            <td class="pc-product">
-			              <input type="text" class="n-of-mugs" value="1"/>
-			              <button class="btn">+</button>
-			              <button class="btn">-</button>
-			            </td>
-			            <td class="pc-product">R$ 25,00</td>
-			          </tr>
-			        </table>
-			
-			        <table class="product-card">
-			          <tr>
-			            <th class="pc-header">lorem impsu lectus</th>
-			            <th class="pc-header">quantidade</th>
-			            <th class="pc-header">preço</th>
-			          </tr>
-			          <tr>
-			            <td class="pc-product"><img src="resources/images/mugs/mug.png" class="product-img"/></td>
-			            <td class="pc-product">
-			              <input type="text" class="n-of-mugs" value="1"/>
-			              <button class="btn">+</button>
-			              <button class="btn">-</button>
-			            </td>
-			            <td class="pc-product">R$ 25,00</td>
-			          </tr>
-			        </table>
-			
-			        <table class="product-card">
-			          <tr>
-			            <th class="pc-header">lorem impsu lectus</th>
-			            <th class="pc-header">quantidade</th>
-			            <th class="pc-header">preço</th>
-			          </tr>
-			          <tr>
-			            <td class="pc-product"><img src="resources/images/mugs/mug.png" class="product-img"/></td>
-			            <td class="pc-product">
-			              <input type="text" class="n-of-mugs" value="1"/>
-			              <button class="btn">+</button>
-			              <button class="btn">-</button>
-			            </td>
-			            <td class="pc-product">R$ 25,00</td>
-			          </tr>
-			        </table>
-			
-			        <table class="product-card">
-			          <tr>
-			            <th class="pc-header">lorem impsu lectus</th>
-			            <th class="pc-header">quantidade</th>
-			            <th class="pc-header">preço</th>
-			          </tr>
-			          <tr>
-			            <td class="pc-product"><img src="resources/images/mugs/mug.png" class="product-img"/></td>
-			            <td class="pc-product">
-			              <input type="text" class="n-of-mugs" value="1"/>
-			              <button class="btn">+</button>
-			              <button class="btn">-</button>
-			            </td>
-			            <td class="pc-product">R$ 25,00</td>
-			          </tr>
-			        </table>
-			
-			        <p class="pc-total-price">Total de R$125,00</p>
-			        <a href="javascript:history.back()" class="btn pull-right">Cancelar</a>
-			        <button class="btn btn-ok pull-right">Finalizar pedido</button>
-			
-			      </section>
+			      <section class="pull-right products-card"> 
+		<c:forEach var="product" items="#{cart}">
+			<table class="product-card">
+				<tr>
+					<th class="pc-header">#{product.name}</th>
+					<th class="pc-header">quantidade</th>
+					<th class="pc-header">preço</th>
+				</tr>
+				<tr>
+					<td class="pc-product"><img src="../resources/images/mugs/mug.png" class="product-img" /></td>
+					<td class="pc-product"><input type="text" class="n-of-mugs" value="1" /> </td>
+					<td class="pc-product">R$ #{product.salePrice}</td>
+					<c:set var="soma"> ${soma + product.salePrice} </c:set>
+				</tr>
+			</table>
+		</c:forEach>
+
+
+		<p class="pc-total-price">Total da compra R$#{soma}</p>
+		<button class="btn pull-right">Cancelar</button>
+		<h:form>
+				<div class="centered-buttons">
+					<h:commandButton value="Finalizar pedido" class="btn btn-ok pull-right"
+						action="#{saleMB.saveSale}" />
+				</div>
+			</h:form>
+
+		</section>
 			      
 			      <aside class="products-profile">
 			        <div class="pc-profile-user">
 			          <img src="resources/images/profile/profile.png" class="pc-profile" />
 			          <div class="pc-profile-info">
-			            <p class="pc-profile-login">Guto Oliveira</p>
-			            <p>Luiz Augusto Pinto de Oliveira</p>
+			            <p class="pc-profile-login">#{usuarioLogado.login}</p>
+			            <p>#{usuarioLogado.name}</p>
 			          </div>
 			        </div>
 			        <p class="pc-profile-address"><label class="pc-address">Endereço</label></p>
-			        <p class="pc-profile-address"><label class="pc-address">Rua: </label>Lorem ipsum dolor sit amet</p>
-			        <p class="pc-profile-address"><label class="pc-address">Nº: </label>42</p>
-			        <p class="pc-profile-address"><label class="pc-address">Bairro: </label>Lorem ipsum dolor sit amet</p>
+			        <p class="pc-profile-address"><label class="pc-address">Rua: </label>#{usuarioLogado.address.street}</p>
+			        <p class="pc-profile-address"><label class="pc-address">Nº: </label>#{usuarioLogado.address.number}</p>
+			        <p class="pc-profile-address"><label class="pc-address">CEP: </label>#{usuarioLogado.address.cep}</p>
 			      </aside>
 			      
 			    </div>

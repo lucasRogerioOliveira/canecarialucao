@@ -21,8 +21,9 @@ public class CartMB {
 	public void addToCart() {
 		
 		product.setCostPrice(6.0);
+		product.setSalePrice(25.00);
 		product.setId(1L);
-		product.setName("Teste");
+		product.setName("Teste2");
 		cartService.addToCart(product);
 	}
 	

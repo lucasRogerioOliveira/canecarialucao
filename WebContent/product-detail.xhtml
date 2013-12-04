@@ -1,55 +1,66 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-	<ui:composition template="templates/base.xhtml">
-		<ui:define name="content">
-			<div class="container no-border">
-      
-		      <h1 class="section-title">canecas</h1>
-		
-		      <section class="pull-right product-detail">
-		        <a href="javascript:history.back()" class="btn pull-right">Cancelar</a>
-		        <button class="btn btn-ok pull-right">Finalizar pedido</button>
-		
-		        <div class="register-group">
-		          <label class="label-register">Tema: </label> <span class="pd-detail">Vintage</span>
-		        </div>
-		        
-		        <div class="register-group">
-		          <label class="label-register">Preço: </label> <span class="pd-detail">R$25,00</span>
-		        </div>
-		
-		        <div class="register-group">
-		          <label class="label-register">Cor: </label> <span class="pd-detail">Preta</span>
-		        </div>
-		        
-		        <div class="register-group">
-		          <label class="label-register">Tamanho: </label> <span class="pd-detail">15cm x 13cm</span>
-		        </div>
-		
-		        <div class="register-group">
-		          <label class="label-register">Estampa:</label>
-		          <div class="register-picture">
-		            <img src="resources/images/details/cogumelo.jpg" class="photo-detail" />
-		          </div>
-		        </div>
-		
-		      </section>
-		      
-		      <aside class="aside-products-detail">
-		        <img src="resources/images/mugs/1e.jpg" class="detail-picture" />
-		        <ul class="detail-pictures">
-		          <li><img src="resources/images/mugs/1e.jpg" class="detail-picture-mini" /></li>
-		          <li><img src="resources/images/mugs/1e.jpg" class="detail-picture-mini" /></li>
-		          <li><img src="resources/images/mugs/1e.jpg" class="detail-picture-mini" /></li>
-		        </ul>
-		      </aside>
-		      
-		    </div>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="templates/base.xhtml">
+	<ui:define name="content">
+		<div class="container no-border">
 
-		</ui:define>
-	</ui:composition>
+			<h1 class="section-title">canecas</h1>
+
+			<section class="pull-right product-detail"> <a
+				href="javascript:history.back()" class="btn pull-right">Cancelar</a>
+			<h:form>
+				<div class="centered-buttons">
+					<h:commandButton value="Adicionar ao Carrinho" class="btn btn-ok"
+						action="#{cartMB.addToCart}" />
+				</div>
+			</h:form>
+
+			<div class="register-group">
+				<label class="label-register">Tema: </label> <span class="pd-detail">#{cartMB.product.theme}</span>
+			</div>
+
+			<div class="register-group">
+				<label class="label-register">Preço: </label> <span
+					class="pd-detail">#{cartMB.product.salePrice}</span>
+			</div>
+
+			<div class="register-group">
+				<label class="label-register">Cor: </label> <span class="pd-detail">#{cartMB.product.spec.color}</span>
+			</div>
+
+			<div class="register-group">
+				<label class="label-register">Tamanho: </label> <span
+					class="pd-detail">#{cartMB.product.spec.height}cm x
+					#{cartMB.product.spec.width}cm</span>
+			</div>
+
+			<div class="register-group">
+				<label class="label-register">Estampa:</label>
+				<div class="register-picture">
+					<img src="resources/images/details/cogumelo.jpg"
+						class="photo-detail" />
+				</div>
+			</div>
+			</section>
+
+			<aside class="aside-products-detail"> <img
+				src="resources/images/mugs/1e.jpg" class="detail-picture" />
+			<ul class="detail-pictures">
+				<li><img src="resources/images/mugs/1e.jpg"
+					class="detail-picture-mini" /></li>
+				<li><img src="resources/images/mugs/1e.jpg"
+					class="detail-picture-mini" /></li>
+				<li><img src="resources/images/mugs/1e.jpg"
+					class="detail-picture-mini" /></li>
+			</ul>
+			</aside>
+
+		</div>
+
+	</ui:define>
+</ui:composition>
 </html>

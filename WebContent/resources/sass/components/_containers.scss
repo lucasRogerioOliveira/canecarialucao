@@ -105,13 +105,13 @@
   @include border-radius(3px);  
 }
 
-.paiment-form-table {
+.payment-form-table {
   background-color: #fff;
   width: 100%;
   border: 2px solid $border;
   border-top: 0;
 
-  .paiment-form-header {
+  .payment-form-header {
     text-align: center;
     line-height: 97px;
 
@@ -120,12 +120,12 @@
     }
   }
 
-  .paiment-form-forms {
+  .payment-form-forms {
     height: 211px;
     padding-bottom: 26px;
   }
 
-  .paiment-form-header, .paiment-form-forms {
+  .payment-form-header, .payment-form-forms {
     border-left: 2px solid $border;
 
     &:first-child {
@@ -143,7 +143,7 @@
   }
 }
 
-.paiment-form-actions {
+.payment-form-actions {
   height: 58px;
   line-height: 58px;
   padding: 0 15px;

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+	<ui:composition template="templates/base.xhtml">
+		<ui:define name="content">
+			<div class="container no-border">
+      
+		      <h1 class="section-title">forma de pagamento</h1>
+		      <table class="payment-form-table">
+		      	<tr>
+		      		<th class="payment-form-header"><img src="resources/images/payment-forms/visa.png" /></th>
+		      		<th class="payment-form-header"><img src="resources/images/payment-forms/master.png" /></th>
+		      		<th class="payment-form-header"><img src="resources/images/payment-forms/boleto.png" /></th>
+		      	</tr>
+		      	<tr>
+			      	<td class="payment-form-forms">
+			      		<span>
+				      		<input type="radio" name="payment" /> 1 x R$ 150,00
+				      		<input type="radio" name="payment" /> 2 x R$ 75,00
+				      		<input type="radio" name="payment" /> 3 x R$ 50,00
+				      		<input type="radio" name="payment" /> 4 x R$ 37,50
+				      		<input type="radio" name="payment" /> 5 x R$ 30,00
+			      		</span>
+			      	</td>
+			      	<td class="payment-form-forms">
+			      		<span>
+				      		<input type="radio" name="payment" /> 1 x R$ 150,00
+				      		<input type="radio" name="payment" /> 2 x R$ 75,00
+				      		<input type="radio" name="payment" /> 3 x R$ 50,00
+				      		<input type="radio" name="payment" /> 4 x R$ 37,50
+				      		<input type="radio" name="payment" /> 5 x R$ 30,00
+			      		</span>
+			      	</td>
+			      	<td class="payment-form-forms">
+			      		<span>
+				      		<input type="radio" name="payment" /> 1 x R$ 150,00
+			      		</span>
+			      	</td>
+		      	</tr>
+		      	<tr>
+		      		<td colspan="3" class="payment-form-actions">
+		      			<a href="javascript:history.back()" class="btn pull-right">Cancelar</a>
+		      			<button class="btn btn-ok pull-right">Finalizar pedido</button>
+		      		</td>
+		      	</tr>
+		      </table>
+		      
+		    </div>
+
+		</ui:define>
+	</ui:composition>
+</html>

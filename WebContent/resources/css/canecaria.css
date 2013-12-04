@@ -393,6 +393,57 @@ a {
   border-radius: 3px;
 }
 
+/* line 108, ../sass/components/_containers.scss */
+.paiment-form-table {
+  background-color: #fff;
+  width: 100%;
+  border: 2px solid #dbdcda;
+  border-top: 0;
+}
+/* line 114, ../sass/components/_containers.scss */
+.paiment-form-table .paiment-form-header {
+  text-align: center;
+  line-height: 97px;
+}
+/* line 118, ../sass/components/_containers.scss */
+.paiment-form-table .paiment-form-header img {
+  vertical-align: middle;
+}
+/* line 123, ../sass/components/_containers.scss */
+.paiment-form-table .paiment-form-forms {
+  height: 211px;
+  padding-bottom: 26px;
+}
+/* line 128, ../sass/components/_containers.scss */
+.paiment-form-table .paiment-form-header, .paiment-form-table .paiment-form-forms {
+  border-left: 2px solid #dbdcda;
+}
+/* line 131, ../sass/components/_containers.scss */
+.paiment-form-table .paiment-form-header:first-child, .paiment-form-table .paiment-form-forms:first-child {
+  border-left: 0;
+}
+/* line 136, ../sass/components/_containers.scss */
+.paiment-form-table span {
+  font-family: Bebas Neue;
+  font-size: 22px;
+  line-height: 36px;
+  width: 124px;
+  margin: 0 auto;
+  display: table;
+}
+
+/* line 146, ../sass/components/_containers.scss */
+.paiment-form-actions {
+  height: 58px;
+  line-height: 58px;
+  padding: 0 15px;
+  border-top: 2px solid #dbdcda;
+}
+/* line 152, ../sass/components/_containers.scss */
+.paiment-form-actions .btn {
+  margin-left: 10px;
+}
+
 /* line 3, ../sass/components/_css-properties.scss */
 .position-absolute {
   position: absolute;

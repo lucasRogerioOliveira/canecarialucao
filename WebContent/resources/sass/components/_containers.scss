@@ -104,3 +104,52 @@
   border: 1px solid $border;
   @include border-radius(3px);  
 }
+
+.paiment-form-table {
+  background-color: #fff;
+  width: 100%;
+  border: 2px solid $border;
+  border-top: 0;
+
+  .paiment-form-header {
+    text-align: center;
+    line-height: 97px;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  .paiment-form-forms {
+    height: 211px;
+    padding-bottom: 26px;
+  }
+
+  .paiment-form-header, .paiment-form-forms {
+    border-left: 2px solid $border;
+
+    &:first-child {
+      border-left: 0;
+    }
+  }
+
+  span {
+    font-family: $Bebas-Neue;
+    font-size: 22px;
+    line-height: 36px;
+    width: 124px;
+    margin: 0 auto;
+    display: table;
+  }
+}
+
+.paiment-form-actions {
+  height: 58px;
+  line-height: 58px;
+  padding: 0 15px;
+  border-top: 2px solid $border;
+
+  .btn {
+    margin-left: 10px;
+  }
+}

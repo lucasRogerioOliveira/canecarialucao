@@ -18,7 +18,8 @@
 				</ul>
 			</div>
 
-			<h:form class="register-form" enctype="multipart/form-data">
+<!-- 			<h:form class="register-form" enctype="multipart/form-data"> -->
+			<h:form class="register-form">
 				<div class="register-group">
 					<h:inputText value="#{registerProductMB.product.name}"
 						class="input-register" />
@@ -35,11 +36,6 @@
 				
 					<label class="label-register">Tema:*</label>
 				</div>
-
-				<!--         <div class="register-group">
-          <h:inputText value="" class="input-register" />
-          <label class="label-register">Preço de custo:*</label>
-        </div>  -->
 
 				<div class="register-group">
 					<h:inputText value="#{registerProductMB.product.salePrice}" class="input-register" />
@@ -86,47 +82,47 @@
 					<label class="label-register">Quantidade em estoque:*</label>
 				</div>
 
-				<div class="register-group">
-					<button class="btn pull-right"> + adicionar
-						<h:inputFile value="#{registerProductMB.product.photo1}"/>
-					</button>
-					<input type="text" class="input-register picture" disabled="true" />
-					<label class="label-register">Estampa:</label>
-				</div>
+<!-- 				<div class="register-group"> -->
+<!-- 					<button class="btn pull-right"> + adicionar -->
+<!-- 						<h:inputFile value="#{registerProductMB.product.photo1}"/> -->
+<!-- 					</button> -->
+<!-- 					<input type="text" class="input-register picture" disabled="true" /> -->
+<!-- 					<label class="label-register">Estampa:</label> -->
+<!-- 				</div> -->
 
-				<hr />
+<!-- 				<hr /> -->
 
-				<div class="register-group">
-					<button class="btn pull-right"> + adicionar 
-						<h:inputFile value="#{registerProductMB.product.photo2}"/>
-					</button>
-					<input type="text" class="input-register picture" disabled="true" />
-					<label class="label-register">caneca 01:</label>
-				</div>
+<!-- 				<div class="register-group"> -->
+<!-- 					<button class="btn pull-right"> + adicionar  -->
+<!-- 						<h:inputFile value="#{registerProductMB.product.photo2}"/> -->
+<!-- 					</button> -->
+<!-- 					<input type="text" class="input-register picture" disabled="true" /> -->
+<!-- 					<label class="label-register">caneca 01:</label> -->
+<!-- 				</div> -->
 
-				<div class="register-group">
-					<button class="btn pull-right"> + adicionar
-						<h:inputFile value="#{registerProductMB.product.photo3}"/>
-					</button>
-					<input type="text" class="input-register picture" disabled="true" />
-					<label class="label-register">caneca 02:</label>
-				</div>
+<!-- 				<div class="register-group"> -->
+<!-- 					<button class="btn pull-right"> + adicionar -->
+<!-- 						<h:inputFile value="#{registerProductMB.product.photo3}"/> -->
+<!-- 					</button> -->
+<!-- 					<input type="text" class="input-register picture" disabled="true" /> -->
+<!-- 					<label class="label-register">caneca 02:</label> -->
+<!-- 				</div> -->
 
-				<div class="register-group">
-					<button class="btn pull-right"> + adicionar
-						<h:inputFile value="#{registerProductMB.product.photo4}"/>
-					</button>
-					<input type="text" class="input-register picture" disabled="true" />
-					<label class="label-register">caneca 03:</label>
-				</div>
+<!-- 				<div class="register-group"> -->
+<!-- 					<button class="btn pull-right"> + adicionar -->
+<!-- 						<h:inputFile value="#{registerProductMB.product.photo4}"/> -->
+<!-- 					</button> -->
+<!-- 					<input type="text" class="input-register picture" disabled="true" /> -->
+<!-- 					<label class="label-register">caneca 03:</label> -->
+<!-- 				</div> -->
 
-				<div class="register-group">
-					<button class="btn pull-right"> + adicionar
-						<h:inputFile value="#{registerProductMB.product.photo5}"/>
-					</button>
-					<input type="text" class="input-register picture" disabled="true" />
-					<label class="label-register">caneca 04:</label>
-				</div>
+<!-- 				<div class="register-group"> -->
+<!-- 					<button class="btn pull-right"> + adicionar -->
+<!-- 						<h:inputFile value="#{registerProductMB.product.photo5}"/> -->
+<!-- 					</button> -->
+<!-- 					<input type="text" class="input-register picture" disabled="true" /> -->
+<!-- 					<label class="label-register">caneca 04:</label> -->
+<!-- 				</div> -->
 
 				<div class="centered-buttons">
 					<h:commandButton value="Adicionar" class="btn btn-ok" action="#{registerProductMB.registerProduct}" />

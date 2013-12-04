@@ -32,7 +32,7 @@
 			              <label class="aside-login-label">senha</label>
 			              <h:inputSecret value="#{loginMB.loginVo.password}" placeholder="senha" class="aside-input"/>
 			              <h:commandButton value="Entrar" class="btn btn-canecaria" action="#{loginMB.actionLogin}" />
-			              <a href="#" class="btn btn-ok">Cadastre-se</a>
+			              <a href="view/register-user.xhtml" class="btn btn-ok">Cadastre-se</a>
 			            </h:form>
 			            <a href="#" class="aside-login-link">Esqueceu sua senha?</a>
 			            <br />
@@ -45,106 +45,18 @@
 			      <h1 class="section-title">canecas</h1>
 			
 			      <ul class="products">
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
-			        <li class="product-box">
-			          <p class="mugs-name">Lorem ipsum lectus</p>
-			          <div class="product">
-			            <img src="resources/images/mugs/mug.png" class="product-img"/>
-			            <footer class="footer-product">
-			              <button class="btn btn-canecaria">R$ 42,00</button>
-			              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
-			            </footer>
-			          </div>
-			        </li>
+			      	<ui:repeat var="prod" value="#{inventoryMB.products}">
+				        <li class="product-box">
+				          <p class="mugs-name">#{prod.name}</p>
+				          <div class="product">
+				            <img src="resources/images/mugs/mug.png" class="product-img"/>
+				            <footer class="footer-product">
+				              <button class="btn btn-canecaria">R$ #{prod.salePrice}</button>
+				              <a href="product-detail.xhtml" class="link-product-detail">Detalhes</a>
+				            </footer>
+				          </div>
+				        </li>
+			        </ui:repeat>
 			      </ul>
 			    </div>
 		</ui:define>
